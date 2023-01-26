@@ -1,0 +1,15 @@
+@mixin flex($item, $justify){
+  display: flex;
+  align-items: $item;
+  justify-content: $justify;
+}
+
+@mixin ellipsis(){
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow:ellipsis;
+}
+
+
+$primary-color: #007acc;

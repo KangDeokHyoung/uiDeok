@@ -1,0 +1,14 @@
+@import "common/scss/utils.scss";
+
+#container {
+  .primary {
+    border-bottom:1px solid #eeeeee;
+    padding: 20px;
+    background-color: $primary-color;
+    h4 {
+      font-size:30px;
+      font-weight:900;
+      color:white;
+    }
+  }
+}
