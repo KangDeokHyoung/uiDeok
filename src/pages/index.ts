@@ -1,5 +1,7 @@
-import { Button } from "./button/Button";
+import { ButtonPage } from "./button/ButtonPage";
+import { InputPage } from "./input/InputPage";
 
 export const Ui = {
-  Button,
+  ButtonPage,
+  InputPage,
 };

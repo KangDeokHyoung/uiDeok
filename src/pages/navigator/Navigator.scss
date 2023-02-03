@@ -1,8 +1,15 @@
 @import "common/scss/utils.scss";
 
 nav {
- a {
-  padding:10px 30px;
-  display: block;
- }
+  a {
+    padding: 20px 30px;
+    display: block;
+    text-align: center;
+    &:hover {
+      background-color: rgb(228, 238, 255);
+    }
+    &.active {
+      font-weight: 500;
+    }
+  }
 }

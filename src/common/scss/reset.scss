@@ -1,17 +1,16 @@
-
 * {
   margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
   outline: none;
-  color: #363636;
 }
 a {
   display: block;
   text-decoration: none;
+  color: black;
   &:active,
   &:focus {
     outline: none;
@@ -19,9 +18,10 @@ a {
 }
 body {
   color: #191919;
-  font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial,
+    sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   overflow: auto;
+  font-size: 16px;
 }
 
 html {
@@ -31,6 +31,9 @@ html {
 }
 
 #root {
-  width:100vw;
+  width: 100vw;
   height: 100vh;
 }
+
+@import "./components/ui_button.scss";
+@import "./components/ui_input.scss";

@@ -1,15 +1,16 @@
-@mixin flex($item, $justify){
+@mixin flex($item, $justify) {
   display: flex;
   align-items: $item;
   justify-content: $justify;
 }
 
-@mixin ellipsis(){
+@mixin ellipsis() {
   display: block;
   white-space: nowrap;
   overflow: hidden;
-  text-overflow:ellipsis;
+  text-overflow: ellipsis;
 }
 
-
 $primary-color: #007acc;
+$disabledB-color: #dddddd;
+$disabledT-color: #a5a5a5;

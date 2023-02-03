@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink, Outlet } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import "./MainContentsLayout.scss";
 import { GrReactjs } from "react-icons/gr";
 import Navigator from "pages/navigator/Navigator";
@@ -14,9 +14,7 @@ export function MainContentsLayout() {
         </div>
         <Navigator />
       </div>
-      <div className="content">
-        <Outlet />
-      </div>
+      <Outlet />
     </div>
   );
 }

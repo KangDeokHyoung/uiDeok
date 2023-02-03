@@ -1,9 +1,9 @@
 import React from "react";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+// import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { useRoutes } from "react-router-dom";
 import { MainContentsLayout } from "layout";
 import { Ui } from "pages";
-import Container from "layout/container/Container";
+import { Container } from "layout";
 
 export const Router: React.FC = () => {
   return useRoutes([
@@ -18,7 +18,10 @@ export const Router: React.FC = () => {
         {
           path: "components",
           element: <Container />,
-          children: [{ path: "button", element: <Ui.Button /> }],
+          children: [
+            { path: "button", element: <Ui.ButtonPage /> },
+            { path: "input", element: <Ui.InputPage /> },
+          ],
         },
         {
           index: true,

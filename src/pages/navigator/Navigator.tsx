@@ -7,7 +7,8 @@ interface I_NavigatorProps {}
 const Navigator: React.FC<I_NavigatorProps> = (props) => {
   return (
     <nav>
-      <NavLink to="/components/button">Button1</NavLink>
+      <NavLink to="/components/button">Button</NavLink>
+      <NavLink to="/components/input">Input</NavLink>
     </nav>
   );
 };
