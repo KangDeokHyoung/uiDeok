@@ -1,9 +1,20 @@
 @import "common/scss/utils.scss";
 
 #ui_input {
+  border: 1px solid #eeeeee;
+  border-radius: 8px;
+  overflow: hidden;
+
   & > input {
-    border: 1px solid #eeeeee;
-    padding: 10px 20px;
-    border-radius: 8px;
+    padding: 10px 15px;
+    &::placeholder {
+      font-size: 12px;
+      color: $placehold-color;
+    }
+  }
+  .input-lock-icon {
+    cursor: pointer;
+    background-color: transparent;
+    padding: 10px;
   }
 }
