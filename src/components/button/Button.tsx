@@ -1,16 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import classNames from "classnames";
+import InputLock from "../input/InputLock";
+import { Loading } from "components";
+import { T_Button } from "type";
 
-type I_ButtonProps = {
-  children?: JSX.Element | string;
-  st?: React.CSSProperties;
-  type?: "button" | "submit";
-  className?: string;
-  disabled?: boolean;
-} & React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>;
+export const Button: React.FC<T_Button.Props> = (props) => {
+  const { children, st, type, className, onClick, disabled, loading } = props;
 
-export const Button: React.FC<I_ButtonProps> = (props) => {
-  const { children, st, type, className, onClick, disabled } = props;
   return (
     <button
       disabled={disabled}
@@ -21,7 +17,11 @@ export const Button: React.FC<I_ButtonProps> = (props) => {
         if (onClick) onClick(e);
       }}
     >
-      <div className={classNames("text", { className: !!className })}>{children ? children : "Button"}</div>
+      {loading ? (
+        <Loading />
+      ) : (
+        <div className={classNames("text", { className: !!className })}>{children ? children : "Button"}</div>
+      )}
     </button>
   );
 };

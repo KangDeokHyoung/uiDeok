@@ -2,6 +2,7 @@ import React from "react";
 import { Button } from "components";
 import { FlexBox } from "common";
 import { ContentBox } from "layout";
+import { Loading } from "components";
 
 export const ButtonPage = () => {
   return (
@@ -10,7 +11,7 @@ export const ButtonPage = () => {
       <p>설명</p>
       <ContentBox>
         <FlexBox st={{ gap: 20 }}>
-          <Button />
+          <Button loading />
           <Button disabled />
           <Button st={{ backgroundColor: "transparent", border: "1px solid red", color: "red" }}>버튼</Button>
           <Button st={{ backgroundColor: "#e71818", width: 200 }} />

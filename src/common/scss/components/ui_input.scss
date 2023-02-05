@@ -4,7 +4,7 @@
   border: 1px solid #eeeeee;
   border-radius: 8px;
   overflow: hidden;
-
+  position: relative;
   & > input {
     padding: 10px 15px;
     &::placeholder {
@@ -16,5 +16,15 @@
     cursor: pointer;
     background-color: transparent;
     padding: 10px;
+    position: absolute;
+    top: 50%;
+    right: 5%;
+    transform: translate(-50%, -50%);
+  }
+  .input-search {
+    position: absolute;
+    top: 50%;
+    right: 5%;
+    transform: translate(-50%, -50%);
   }
 }
