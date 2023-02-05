@@ -1,20 +1,21 @@
-import React, { useState } from "react";
+import React, { useState, createContext, Dispatch } from "react";
 import { T_Dialog } from "type";
 
-type Context = {} | null;
+type Context = {
+  toggle: boolean;
+  setToggle: Dispatch<boolean>;
+  children: (closeHandler: Dispatch<boolean>) => void;
+} | null;
 
 export function Dialog(props: T_Dialog.Props) {
   const { children } = props;
-  const Context = React.createContext<Context>(null);
+  const Context = createContext<Context>(null);
   const [toggle, setToggle] = useState(false);
 
-  return (
-    <div>
-      {/* {children(() =>)} */}
-      <div className="di-body"></div>
-      <div className="di-footer"></div>
-    </div>
-  );
+  const closeHandler = () => {
+    setToggle(!toggle);
+  };
+  return <></>;
 }
 
 const Head: React.FC<{ title: string }> = (props) => {
