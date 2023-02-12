@@ -1,12 +1,27 @@
 @import "common/scss/utils.scss";
 
 #ui_input {
-  border: 1px solid #eeeeee;
   border-radius: 8px;
-  overflow: hidden;
+  @include flex(center, space-between);
+  height: 50px;
   position: relative;
+
+  &.error {
+    & > input {
+      border-color: $error-color;
+    }
+  }
+
   & > input {
-    padding: 10px 15px;
+    height: 100%;
+    border: 1px solid #eeeeee;
+    padding: 0 20px 0 15px;
+    box-sizing: border-box;
+    border-radius: 4px;
+    &:focus {
+      border-color: $focus-color;
+    }
+
     &::placeholder {
       font-size: 12px;
       color: $placehold-color;
@@ -15,16 +30,15 @@
   .input-lock-icon {
     cursor: pointer;
     background-color: transparent;
-    padding: 10px;
     position: absolute;
     top: 50%;
-    right: 5%;
-    transform: translate(-50%, -50%);
+    right: 4%;
+    transform: translateY(-50%);
   }
   .input-search {
     position: absolute;
     top: 50%;
-    right: 5%;
-    transform: translate(-50%, -50%);
+    right: 4%;
+    transform: translateY(-50%);
   }
 }

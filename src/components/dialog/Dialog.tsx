@@ -18,14 +18,25 @@ export function Dialog(props: T_Dialog.Props) {
   return <></>;
 }
 
-const Head: React.FC<{ title: string }> = (props) => {
-  const { title } = props;
-  return (
-    <div className="di-head">
-      <h4>{title}</h4>
-      <span>x</span>
-    </div>
-  );
-};
+// const Head: React.FC<{ title: string }> = (props) => {
+//   const { title } = props;
+//   return (
+//     <div className="di-head">
+//       <h4>{title}</h4>
+//       <span>x</span>
+//     </div>
+//   );
+// };
 
-Dialog.Head = Head;
+// const Body: React.FC<{ title: string }> = (props) => {
+//   const { title } = props;
+//   return (
+//     <div className="di-head">
+//       <h4>{title}</h4>
+//       <span>x</span>
+//     </div>
+//   );
+// };
+
+// Dialog.Head = Head;
+// Dialog.Body = Body;

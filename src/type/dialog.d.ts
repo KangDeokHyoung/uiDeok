@@ -1,6 +1,6 @@
 export declare namespace T_Dialog {
   type Props = {
-    children?: JSX.Element;
+    children?: JSX.Element | string;
     open?: boolean;
     onChange?: () => void;
     disabled?: boolean;

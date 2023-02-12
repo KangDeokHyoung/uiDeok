@@ -6,6 +6,7 @@ export declare namespace T_Input {
     inputRef?: React.ForwardedRef<HTMLInputElement>;
     LockOpend?: JSX.Element;
     LockClosed?: JSX.Element;
+    error?: boolean;
   } & InputProps;
   type InputProps = React.DetailedHTMLProps<React.InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>;
 }
