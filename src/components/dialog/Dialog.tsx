@@ -1,3 +1,4 @@
+import Portal from "components/portal/Portal";
 import React, { useState, createContext, Dispatch } from "react";
 import { T_Dialog } from "type";
 
@@ -8,14 +9,25 @@ type Context = {
 } | null;
 
 export function Dialog(props: T_Dialog.Props) {
-  const { children } = props;
+  const { children, disabled } = props;
   const Context = createContext<Context>(null);
   const [toggle, setToggle] = useState(false);
 
-  const closeHandler = () => {
-    setToggle(!toggle);
-  };
-  return <></>;
+  // const closeHandler = () => {
+  //   setToggle(!toggle);
+  // };
+  return (
+    <>
+      <div
+        onClick={() => {
+          if (!disabled) setToggle(true);
+        }}
+      >
+        {children}
+      </div>
+      <Portal toggle={toggle} setToggle={setToggle}></Portal>
+    </>
+  );
 }
 
 // const Head: React.FC<{ title: string }> = (props) => {

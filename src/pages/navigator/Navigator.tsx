@@ -9,6 +9,7 @@ const Navigator: React.FC<I_NavigatorProps> = (props) => {
     <nav>
       <NavLink to="/components/button">Button</NavLink>
       <NavLink to="/components/input">Input</NavLink>
+      <NavLink to="/components/dialog">Dialog</NavLink>
     </nav>
   );
 };

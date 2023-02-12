@@ -21,6 +21,7 @@ export const Router: React.FC = () => {
           children: [
             { path: "button", element: <Ui.ButtonPage /> },
             { path: "input", element: <Ui.InputPage /> },
+            { path: "dialog", element: <Ui.DialogPage /> },
           ],
         },
         {

@@ -1,0 +1,12 @@
+@import "common/scss/utils.scss";
+
+#ui-label {
+  @include flex(center, initial);
+  gap: 5px;
+  & > span {
+    color: red;
+  }
+  & > div {
+    font-weight: 500;
+  }
+}

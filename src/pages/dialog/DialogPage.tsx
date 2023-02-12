@@ -1,13 +1,18 @@
 import React from "react";
-import { Dialog } from "components";
+import { Button, Dialog } from "components";
+import { ContentBox } from "layout";
 import { T_Dialog } from "type";
 
-const DialogPage: React.FC<T_Dialog.Props> = (props) => {
+export const DialogPage: React.FC<T_Dialog.Props> = (props) => {
   return (
-    <Dialog content={({ closeHandler }) => <div>팝업창입니다.</div>}>
-      <div>버튼</div>
-    </Dialog>
+    <div id="button-page">
+      <h4>Input</h4>
+      <p>설명</p>
+      <ContentBox>
+        <Dialog content={({ closeHandler }) => <div>팝업창입니다.</div>}>
+          <Button>dialogg</Button>
+        </Dialog>
+      </ContentBox>
+    </div>
   );
 };
-
-export default DialogPage;
