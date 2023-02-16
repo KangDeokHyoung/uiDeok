@@ -9,13 +9,12 @@ type Context = {
 } | null;
 
 export function Dialog(props: T_Dialog.Props) {
-  const { children, disabled } = props;
+  const { children, disabled, content } = props;
   const Context = createContext<Context>(null);
   const [toggle, setToggle] = useState(false);
 
-  // const closeHandler = () => {
-  //   setToggle(!toggle);
-  // };
+  console.log(toggle);
+
   return (
     <>
       <div
@@ -25,30 +24,7 @@ export function Dialog(props: T_Dialog.Props) {
       >
         {children}
       </div>
-      <Portal toggle={toggle} setToggle={setToggle}></Portal>
+      {toggle && <Portal toggle={toggle} setToggle={setToggle} content={content} />}
     </>
   );
 }
-
-// const Head: React.FC<{ title: string }> = (props) => {
-//   const { title } = props;
-//   return (
-//     <div className="di-head">
-//       <h4>{title}</h4>
-//       <span>x</span>
-//     </div>
-//   );
-// };
-
-// const Body: React.FC<{ title: string }> = (props) => {
-//   const { title } = props;
-//   return (
-//     <div className="di-head">
-//       <h4>{title}</h4>
-//       <span>x</span>
-//     </div>
-//   );
-// };
-
-// Dialog.Head = Head;
-// Dialog.Body = Body;
