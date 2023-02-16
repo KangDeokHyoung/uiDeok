@@ -10,7 +10,7 @@ const Portal: React.FC<T_Dialog.Portal.Props> = (props) => {
   const contents = (
     <div className={classNames("dialog-box", { className })}>
       <div className="content-box">
-        <div className="content-bg">{content && content({ closeHandler: () => setToggle(false) })}</div>
+        <div className="content-area">{content && content({ closeHandler: () => setToggle(false) })}</div>
         <div className="di_background" role="button" onClick={() => setToggle(false)} />
       </div>
     </div>

@@ -13,8 +13,6 @@ export function Dialog(props: T_Dialog.Props) {
   const Context = createContext<Context>(null);
   const [toggle, setToggle] = useState(false);
 
-  console.log(toggle);
-
   return (
     <>
       <div
@@ -28,3 +26,26 @@ export function Dialog(props: T_Dialog.Props) {
     </>
   );
 }
+
+type BaseProps = {
+  id?: string;
+  children: JSX.Element;
+};
+
+type ContentsProps = {
+  id?: string;
+  children: JSX.Element | string;
+};
+
+function Base(props: BaseProps) {
+  const { id, children } = props;
+  return <div id={id}>{children}</div>;
+}
+
+function Content(props: ContentsProps) {
+  const { id, children } = props;
+  return <div>{children}</div>;
+}
+
+Dialog.Base = Base;
+Dialog.Content = Content;
