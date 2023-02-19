@@ -2,7 +2,6 @@ import React from "react";
 import { Button } from "components";
 import { FlexBox } from "common";
 import { ContentBox } from "layout";
-import { Loading } from "components";
 
 export const ButtonPage = () => {
   return (

@@ -1,10 +1,8 @@
-import React, { useState, useRef, useEffect } from "react";
-import { RiLockPasswordFill } from "react-icons/ri";
-import { BiSearch } from "react-icons/bi";
+import React, { useState, useRef } from "react";
 import { T_Input } from "type";
 import InputLock from "./InputLock";
 import classNames from "classnames";
-import Label from "components/label/Label";
+import { Label } from "components";
 import { Box } from "common";
 
 export const Input: React.FC<T_Input.Props> = (props) => {
@@ -23,6 +21,7 @@ export const Input: React.FC<T_Input.Props> = (props) => {
         <input {...rest} ref={refs || inputRef} placeholder={placeholder} type={_type} />
         {type === "password" && <InputLock setType={setType} type={_type} />}
       </div>
+      {error && <div className="error">{error}</div>}
     </div>
   );
 };
