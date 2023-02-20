@@ -1,6 +1,9 @@
 @import "common/scss/utils.scss";
 
 #check-box {
+  @include flex(center, initial);
+  gap: 5px;
+
   &:has(input[type="checkbox"]:checked) {
     .container {
       border-color: $primary-color;
@@ -10,30 +13,31 @@
       }
     }
   }
-  .container {
-    border: 1px solid #737373;
-    width: 16px;
-    height: 16px;
-    border-radius: 2px;
-    position: relative;
-    input {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      opacity: 0;
-      z-index: 2;
-      cursor: pointer;
-    }
-    .check-icon {
-      display: none;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
+  .label {
+    @include flex(center, initial);
+    gap: 5px;
+    .container {
+      border: 1px solid #737373;
+      width: 16px;
+      height: 16px;
+      border-radius: 2px;
+      position: relative;
+      input {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        z-index: 2;
+        cursor: pointer;
+      }
+      .check-icon {
+        display: none;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 20px;
+      }
     }
   }
-  // .checkbox {
-  //   color: $primary-color;
-  //   width: 100px;
-  // }
 }

@@ -15,7 +15,7 @@ export const Input: React.FC<T_Input.Props> = (props) => {
   return (
     <div>
       <Box st={{ marginBottom: 3 }}>
-        <>{rest.label && <Label text={rest.label} />}</>
+        <>{rest.label && <Label text={rest.label} required />}</>
       </Box>
       <div id="ui_input" style={st} className={classNames({ focus, error })}>
         <input {...rest} ref={refs || inputRef} placeholder={placeholder} type={_type} />

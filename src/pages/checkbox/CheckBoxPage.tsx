@@ -10,7 +10,9 @@ export const CheckBoxPage = () => {
       <p>설명</p>
       <ContentBox>
         <FlexBox st={{ gap: 20 }}>
-          <CheckBox />
+          <CheckBox label="CheckBox" />
+          <CheckBox label="CheckBox" />
+          <CheckBox label="CheckBox" />
         </FlexBox>
       </ContentBox>
     </div>

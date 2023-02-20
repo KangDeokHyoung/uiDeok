@@ -2,13 +2,14 @@ import React from "react";
 
 interface Props {
   text: string | JSX.Element;
+  required?: boolean;
 }
 
 export const Label: React.FC<Props> = (props) => {
-  const { text } = props;
+  const { text, required } = props;
   return (
     <div id="ui-label">
-      <span>*</span>
+      {required && <span>*</span>}
       <div>{text}</div>
     </div>
   );
