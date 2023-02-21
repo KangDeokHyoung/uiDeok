@@ -9,12 +9,12 @@ export const CheckBox: React.FC<Props> = (props) => {
   return (
     <div id="check-box" style={props.st}>
       {props.label && (
-        <label className="label">
+        <label className="label-row">
           <div className="container">
             <input type="checkbox" ref={props.inputRef} />
             <Check className="check-icon" style={{ color: "white", fontSize: 20 }} />
           </div>
-          <Label text={props.label as string} />
+          <Label className="label" text={props.label as string} />
         </label>
       )}
     </div>

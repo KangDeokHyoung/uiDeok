@@ -23,6 +23,7 @@ export const Router: React.FC = () => {
             { path: "input", element: <Ui.InputPage /> },
             { path: "dialog", element: <Ui.DialogPage /> },
             { path: "checkbox", element: <Ui.CheckBoxPage /> },
+            { path: "radio", element: <Ui.RadioPage /> },
           ],
         },
         {

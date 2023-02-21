@@ -4,3 +4,4 @@ export { Loading } from "./loading/Loading";
 export { Dialog } from "./dialog/Dialog";
 export { CheckBox } from "./checkbox/CheckBox";
 export { Label } from "./label/Label";
+export { Radio } from "./radio/Radio";

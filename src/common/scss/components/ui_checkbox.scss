@@ -13,7 +13,7 @@
       }
     }
   }
-  .label {
+  .label-row {
     @include flex(center, initial);
     gap: 5px;
     .container {
@@ -38,6 +38,9 @@
         transform: translate(-50%, -50%);
         font-size: 20px;
       }
+    }
+    .label {
+      cursor: pointer;
     }
   }
 }
