@@ -10,7 +10,10 @@ export const RadioPage = () => {
       <p>설명</p>
       <ContentBox>
         <FlexBox st={{ gap: 20 }}>
-          <Radio />
+          <Radio.Group>
+            <Radio title="1" value={1} />
+            <Radio title="2" value={2} />
+          </Radio.Group>
         </FlexBox>
       </ContentBox>
     </div>

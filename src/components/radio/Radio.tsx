@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { T_Radio } from "type";
 import { Check } from "common";
 import { Label } from "components";
@@ -6,22 +6,37 @@ import { Label } from "components";
 type Props = T_Radio.Props;
 
 export function Radio(props: Props) {
-  const { children, value, name, defaultChecked, disabled } = props;
+  const { children, value, name, defaultChecked, disabled, title } = props;
   return (
     <label>
-      <input type="radio" value={value} name={name} defaultChecked={defaultChecked} disabled={disabled} />
+      <input
+        type="radio"
+        checked={true}
+        title={title}
+        value={value}
+        name={name}
+        defaultChecked={defaultChecked}
+        disabled={disabled}
+      />
       {children}
     </label>
   );
 }
 
-// function RadioGroup({ label, children }: ) {
-//   return (
-//     <fieldset>
-//       <legend>{label}</legend>
-//       {children}
-//     </fieldset>
-//   );
-// }
+type PropsGroup<T> = {
+  label?: string | JSX.Element;
+  children: JSX.Element[];
+  vlaue?: T;
+};
 
-// Radio.Group = RadioGroup;
+function RadioGroup<T>({ label, children }: PropsGroup<T>) {
+  const [check, setCheck] = useState("");
+  return (
+    <fieldset>
+      <legend>{label && label}</legend>
+      {children}
+    </fieldset>
+  );
+}
+
+Radio.Group = RadioGroup;
