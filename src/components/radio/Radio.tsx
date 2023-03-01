@@ -6,12 +6,17 @@ import { Label } from "components";
 type Props = T_Radio.Props;
 
 export function Radio(props: Props) {
-  const { children, value, name, defaultChecked, disabled, title } = props;
+  const { children, value, name, defaultChecked, disabled, title, check, setCheck } = props;
+
+  // const onChangeHandler = (e: React.on) => {
+  //   setCheck(e.target.);
+  // };
+
   return (
     <label>
       <input
         type="radio"
-        checked={true}
+        checked={check === value}
         title={title}
         value={value}
         name={name}
@@ -30,11 +35,14 @@ type PropsGroup<T> = {
 };
 
 function RadioGroup<T>({ label, children }: PropsGroup<T>) {
-  const [check, setCheck] = useState("");
+  const [check, setCheck] = useState<number>(0);
+
   return (
     <fieldset>
       <legend>{label && label}</legend>
-      {children}
+      {children.map((child, index) => {
+        return React.cloneElement(child, { check, setCheck });
+      })}
     </fieldset>
   );
 }

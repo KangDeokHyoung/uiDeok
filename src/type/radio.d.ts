@@ -3,7 +3,7 @@ export declare namespace T_Radio {
     label?: React.ReactNode | string;
     st?: React.CSSProperties;
     title: string;
-    value: any;
+    value: number;
     inputRef?: React.ForwardedRef<HTMLInputElement>;
   } & React.DelHTMLAttributes<React.HTMLInputTypeAttribute<HTMLInputElement>, HTMLInputElement>;
 }
