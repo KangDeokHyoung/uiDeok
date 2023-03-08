@@ -6,5 +6,5 @@ interface Props {
 }
 
 export const ContentBox: React.FC<Props> = (props) => {
-  return <div id="content-box">{props.children}</div>;
+  return <div id="content-box">{Array.isArray(props.children) ? props.children.map((el) => el) : props.children}</div>;
 };

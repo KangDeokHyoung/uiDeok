@@ -1,0 +1,18 @@
+@import "common/scss/utils.scss";
+
+#ui_radio_group {
+  #ui_radio_item {
+    @include flex(center, initial);
+    cursor: pointer;
+    gap: 10px;
+    padding: 4px 0;
+
+    .radio-item {
+      @include flex(center, center);
+    }
+    .radio-title {
+      font-size: 1em;
+      margin-bottom: 3px;
+    }
+  }
+}

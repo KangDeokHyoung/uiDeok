@@ -1,48 +1,54 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { T_Radio } from "type";
 import { Check } from "common";
-import { Label } from "components";
+import { IoMdRadioButtonOff, IoMdRadioButtonOn } from "react-icons/io";
+import classNames from "classnames";
 
 type Props = T_Radio.Props;
 
 export function Radio(props: Props) {
-  const { children, value, name, defaultChecked, disabled, title, check, setCheck } = props;
+  const { children, value, name, defaultChecked, disabled, title, check, setCheck, st, className } = props;
 
   // const onChangeHandler = (e: React.on) => {
   //   setCheck(e.target.);
   // };
 
+  const onChangeHandler = () => {
+    if (disabled) return;
+    setCheck(value);
+  };
+  const defaultStyle = { color: "#007acc", fontSize: 20 };
+
   return (
-    <label>
-      <input
-        type="radio"
-        checked={check === value}
-        title={title}
-        value={value}
-        name={name}
-        defaultChecked={defaultChecked}
-        disabled={disabled}
-      />
+    <div id="ui_radio_item" onClick={onChangeHandler}>
+      <div className={classNames("radio-item", { className: className ?? false })}>
+        {check === value && <IoMdRadioButtonOn style={{ ...defaultStyle, ...st }} />}
+        {check !== value && <IoMdRadioButtonOff style={{ ...defaultStyle, ...st }} />}
+      </div>
+      <div className="radio-title">{title}</div>
       {children}
-    </label>
+    </div>
   );
 }
 
 type PropsGroup<T> = {
-  label?: string | JSX.Element;
   children: JSX.Element[];
   vlaue?: T;
+  onChange?: (check: number) => void;
 };
 
-function RadioGroup<T>({ label, children }: PropsGroup<T>) {
+function RadioGroup<T>({ children, onChange }: PropsGroup<T>) {
   const [check, setCheck] = useState<number>(0);
 
+  useEffect(() => {
+    if (onChange) onChange(check);
+  }, [check, onChange]);
+
   return (
-    <fieldset>
-      <legend>{label && label}</legend>
-      {children.map((child, index) => {
-        return React.cloneElement(child, { check, setCheck });
-      })}
+    <fieldset id="ui_radio_group">
+      {children.map((child, index) => (
+        <React.Fragment key={index}>{React.cloneElement(child, { check, setCheck })}</React.Fragment>
+      ))}
     </fieldset>
   );
 }

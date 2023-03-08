@@ -11,6 +11,8 @@
     "@types/node": "^16.18.3",
     "@types/react": "^18.0.20",
     "classnames": "^2.3.2",
+    "eslint-plugin-react-hooks": "^5.0.0-next-703c67560-20230307",
+    "lodash": "^4.17.21",
     "prettier": "^2.7.1",
     "react": "^18.2.0",
     "react-icons": "^4.6.0",
