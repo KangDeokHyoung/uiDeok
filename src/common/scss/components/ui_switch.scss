@@ -1,0 +1,18 @@
+@import "common/scss/utils.scss";
+
+#ui_switch {
+  position: relative;
+  & > input {
+    display: none;
+  }
+  .slider {
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%);
+    left: 0;
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    background-color: red;
+  }
+}

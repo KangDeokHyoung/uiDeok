@@ -12,6 +12,7 @@ const Navigator: React.FC<I_NavigatorProps> = (props) => {
       <NavLink to="/components/dialog">Dialog</NavLink>
       <NavLink to="/components/checkbox">CheckBox</NavLink>
       <NavLink to="/components/radio">Radio</NavLink>
+      <NavLink to="/components/switch">Switch</NavLink>
     </nav>
   );
 };

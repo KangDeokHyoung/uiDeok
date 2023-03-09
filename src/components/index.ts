@@ -5,3 +5,4 @@ export { Dialog } from "./dialog/Dialog";
 export { CheckBox } from "./checkbox/CheckBox";
 export { Label } from "./label/Label";
 export { Radio } from "./radio/Radio";
+export { Switch } from "./switch/Switch";
