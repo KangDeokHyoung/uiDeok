@@ -7,7 +7,7 @@
     width: 100%;
     height: 100%;
     border-radius: 50px;
-    background-color: #bbbbbb;
+    background-color: #cccccc;
     position: relative;
     cursor: pointer;
 
@@ -26,7 +26,7 @@
     }
     &.checked {
       &::before {
-        left: 24px;
+        left: 22.5px;
         background-color: $primary-color;
       }
     }
