@@ -1,18 +1,34 @@
 @import "common/scss/utils.scss";
 
 #ui_switch {
-  position: relative;
-  & > input {
-    display: none;
-  }
+  width: 46px;
+  height: 24px;
   .slider {
-    position: absolute;
-    top: 50%;
-    transform: translate(-50%);
-    left: 0;
-    width: 10px;
-    height: 10px;
-    border-radius: 100%;
-    background-color: red;
+    width: 100%;
+    height: 100%;
+    border-radius: 50px;
+    background-color: #bbbbbb;
+    position: relative;
+    cursor: pointer;
+
+    &::before {
+      position: absolute;
+      content: "";
+      z-index: 1;
+      background-color: white;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      top: 50%;
+      transform: translateY(-50%);
+      transition: 0.3s ease;
+      left: 3px;
+    }
+    &.checked {
+      &::before {
+        left: 24px;
+        background-color: $primary-color;
+      }
+    }
   }
 }
