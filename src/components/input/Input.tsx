@@ -6,7 +6,7 @@ import { Label } from "components";
 import { Box } from "common";
 
 export const Input: React.FC<T_Input.Props> = (props) => {
-  const { placeholder = "입력값이 필요합니다.", inputRef, st, type, error, ...rest } = props;
+  const { placeholder = "입력값이 필요합니다.", inputRef, st, value = "", type, error, ...rest } = props;
   const [focus, setFocus] = useState(false);
   const [_type, setType] = useState(type);
 

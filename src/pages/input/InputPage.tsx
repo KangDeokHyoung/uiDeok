@@ -11,10 +11,16 @@ export const InputPage = () => {
       <ContentBox>
         <div>
           <Box st={{ marginBottom: 30 }}>
-            <Input label="placeholder" placeholder="placeholder" />
+            <Input label="placeholder" placeholder="placeholder" onChange={(e) => e.target.value} />
           </Box>
           <Box st={{ marginBottom: 30 }}>
-            <Input label="password" type="password" placeholder="password" value="12341234" />
+            <Input
+              label="password"
+              type="password"
+              placeholder="password"
+              value="12341234"
+              onChange={(e) => e.target.value}
+            />
           </Box>
           <Box st={{ marginBottom: 30 }}>
             <Input label="error" error />
