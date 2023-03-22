@@ -4,6 +4,7 @@ import { DialogPage } from "./dialog/DialogPage";
 import { CheckBoxPage } from "./checkbox/CheckBoxPage";
 import { RadioPage } from "./radio/RadioPage";
 import { SwitchPage } from "./switch/SwitchPage";
+import { AccordionPage } from "./accordion/AccordionPage";
 
 export const Ui = {
   ButtonPage,
@@ -12,4 +13,5 @@ export const Ui = {
   CheckBoxPage,
   RadioPage,
   SwitchPage,
+  AccordionPage,
 };

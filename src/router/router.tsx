@@ -1,5 +1,4 @@
 import React from "react";
-// import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { useRoutes } from "react-router-dom";
 import { MainContentsLayout } from "layout";
 import { Ui } from "pages";
@@ -25,6 +24,7 @@ export const Router: React.FC = () => {
             { path: "checkbox", element: <Ui.CheckBoxPage /> },
             { path: "radio", element: <Ui.RadioPage /> },
             { path: "switch", element: <Ui.SwitchPage /> },
+            { path: "accordion", element: <Ui.AccordionPage /> },
           ],
         },
         {

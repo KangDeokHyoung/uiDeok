@@ -15,7 +15,7 @@ export const SwitchPage = () => {
           <>{open ? "ON" : "OFF"}</>
         </Box>
         <FlexBox st={{ gap: 20 }}>
-          <Switch />
+          <Switch onChange={(item) => setOpen(item)} value={open} />
         </FlexBox>
       </ContentBox>
     </div>
