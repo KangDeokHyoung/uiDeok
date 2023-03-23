@@ -1,6 +1,8 @@
-import classNames from "classnames";
 import React, { useState, createContext } from "react";
+import classNames from "classnames";
 import { T_Accordion } from "type";
+import { Summary } from "./Summary";
+import { Collapse } from "./Collapse";
 
 export const AccordionContext = createContext<T_Accordion.Props>({
   disabled: false,
@@ -31,3 +33,6 @@ export const Accordion = (props: T_Accordion.Props) => {
     </AccordionContext.Provider>
   );
 };
+
+Accordion.Summary = Summary;
+Accordion.Collapse = Collapse;

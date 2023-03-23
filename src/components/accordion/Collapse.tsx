@@ -1,7 +1,10 @@
 import React from "react";
 
-interface Props {}
+interface Props {
+  children: React.ReactNode | string;
+}
 
-export const Collapse = (props: Props) => {
-  return <></>;
-};
+export function Collapse(props: Props) {
+  const { children } = props;
+  return <div>{children}</div>;
+}

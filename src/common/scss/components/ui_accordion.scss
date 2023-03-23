@@ -1,4 +1,10 @@
 @import "common/scss/utils.scss";
 
 .ui_accordion {
+  width: 100%;
+  height: auto;
+  .accordion_summary {
+    height: 50px;
+    cursor: pointer;
+  }
 }
