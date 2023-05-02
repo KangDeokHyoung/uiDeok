@@ -1,17 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { T_Radio } from "type";
-import { Check } from "common";
 import { IoMdRadioButtonOff, IoMdRadioButtonOn } from "react-icons/io";
 import classNames from "classnames";
 
 type Props = T_Radio.Props;
 
 export function Radio(props: Props) {
-  const { children, value, name, defaultChecked, disabled, title, check, setCheck, st, className } = props;
-
-  // const onChangeHandler = (e: React.on) => {
-  //   setCheck(e.target.);
-  // };
+  const { children, value, disabled, title, check, setCheck, st, className } = props;
 
   const onChangeHandler = () => {
     if (disabled) return;

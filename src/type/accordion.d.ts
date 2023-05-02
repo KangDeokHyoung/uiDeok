@@ -5,7 +5,6 @@ export declare namespace T_Accordion {
     st?: React.CSSProperties;
     disabled?: boolean;
     children?: React.ReactNode;
-    // id?: string;
     className?: string;
     transition?: boolean;
     toggle?: boolean;

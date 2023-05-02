@@ -1,12 +1,15 @@
-import React, { useContext } from "react";
+import React from "react";
 import { AccordionContext } from "./Accordion";
+import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import { T_Accordion } from "type";
 import classNames from "classnames";
-import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 
 export function Summary(props: T_Accordion.Summay) {
-  const { st, children, className = "" } = props;
-  const { expanded, onChange, setExpanded, toggle, disabled } = useContext(AccordionContext);
+  return <AccordionContext.Consumer>{(value) => <SummryComp {...value} />}</AccordionContext.Consumer>;
+}
+
+export const SummryComp = (props: T_Accordion.Props) => {
+  const { children, st, className = "", disabled, setExpanded, onChange, expanded } = props;
 
   const onClickHandler = () => {
     if (disabled) return;
@@ -14,8 +17,6 @@ export function Summary(props: T_Accordion.Summay) {
     const check = expanded ? expanded : false;
     if (onClick) onClick(!check);
   };
-
-  console.log({ expanded, toggle });
 
   return (
     <div style={st} onClick={onClickHandler} className={classNames("accordion_summary", { [className]: className })}>
@@ -26,4 +27,4 @@ export function Summary(props: T_Accordion.Summay) {
       </div>
     </div>
   );
-}
+};

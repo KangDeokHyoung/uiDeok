@@ -1,8 +1,6 @@
 import React, { useContext } from "react";
 import { Accordion } from "components";
 import { ContentBox } from "layout";
-import { AccordionContext } from "components/accordion/Accordion";
-// import { Box } from "common";
 
 export const AccordionPage = () => {
   return (
@@ -11,9 +9,11 @@ export const AccordionPage = () => {
       <p>설명</p>
       <ContentBox st={{ backgroundColor: "rgb(231, 235, 240)" }}>
         <Accordion>
-          <Accordion.Summary />
+          <Accordion.Summary>
+            <div>Accordion.Summary</div>
+          </Accordion.Summary>
           <Accordion.Collapse>
-            <div></div>
+            <div>Accordion.Collapse</div>
           </Accordion.Collapse>
         </Accordion>
       </ContentBox>

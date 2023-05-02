@@ -1,5 +1,4 @@
-import React, { ChangeEvent, useEffect, useState } from "react";
-import { IoMdRadioButtonOff, IoMdRadioButtonOn } from "react-icons/io";
+import React, { useState } from "react";
 import classNames from "classnames";
 
 type Props = {
