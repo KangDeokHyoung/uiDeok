@@ -6,6 +6,10 @@
   .accordion_summary {
     height: 50px;
     cursor: pointer;
-    @include flex(initial, space-between);
+    @include flex(center, space-between);
+
+    .summary-title {
+      @include flex(initial, initial);
+    }
   }
 }

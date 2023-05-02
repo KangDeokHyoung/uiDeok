@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useRef } from "react";
+import { CSSTransition } from "react-transition-group";
+import { useAccordion } from "./Accordion";
 
 interface Props {
   children: React.ReactNode | string;
@@ -6,5 +8,13 @@ interface Props {
 
 export function Collapse(props: Props) {
   const { children } = props;
-  return <div>{children}</div>;
+  const { expanded } = useAccordion();
+
+  const acoRef = useRef(null);
+
+  return (
+    <CSSTransition classNames="collapse" nodeRef={acoRef} timeout={200} in={expanded}>
+      <div className="collapse">{children}</div>
+    </CSSTransition>
+  );
 }

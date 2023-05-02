@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React from "react";
 import { Accordion } from "components";
 import { ContentBox } from "layout";
 
@@ -13,7 +13,7 @@ export const AccordionPage = () => {
             <div>Accordion.Summary</div>
           </Accordion.Summary>
           <Accordion.Collapse>
-            <div>Accordion.Collapse</div>
+            <div>AccordionCollapse</div>
           </Accordion.Collapse>
         </Accordion>
       </ContentBox>

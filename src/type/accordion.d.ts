@@ -15,7 +15,7 @@ export declare namespace T_Accordion {
 
   type Summay = {
     st?: React.CSSProperties;
-    children?: React.ReactNode;
+    children?: React.ReactElement;
     className?: string;
   };
 }

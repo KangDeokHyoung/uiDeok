@@ -5,7 +5,11 @@ import { T_Accordion } from "type";
 import classNames from "classnames";
 
 export function Summary(props: T_Accordion.Summay) {
-  return <AccordionContext.Consumer>{(value) => <SummryComp {...value} />}</AccordionContext.Consumer>;
+  return (
+    <AccordionContext.Consumer>
+      {(value) => <SummryComp {...value} children={props.children} />}
+    </AccordionContext.Consumer>
+  );
 }
 
 export const SummryComp = (props: T_Accordion.Props) => {
@@ -18,13 +22,12 @@ export const SummryComp = (props: T_Accordion.Props) => {
     if (onClick) onClick(!check);
   };
 
+  console.log({ children });
+
   return (
     <div style={st} onClick={onClickHandler} className={classNames("accordion_summary", { [className]: className })}>
-      <div>{children}</div>
-      <div className="icon-arrow">
-        <IoIosArrowDown />
-        <IoIosArrowUp />
-      </div>
+      <div className="summary-title">{children}</div>
+      <div className="icon-arrow">{expanded ? <IoIosArrowDown /> : <IoIosArrowUp />}</div>
     </div>
   );
 };
