@@ -3,10 +3,27 @@
 .ui_accordion {
   width: 100%;
   height: auto;
+  background-color: white;
+  border-radius: 8px;
+
+  & > .collapse {
+    padding: 3%;
+  }
+
+  & > .collapse-enter {
+    opacity: 0;
+  }
+
+  & > .collapse-enter-active {
+    opacity: 1;
+    transition: opacity 200ms;
+  }
+
   .accordion_summary {
     height: 50px;
     cursor: pointer;
     @include flex(center, space-between);
+    padding: 0 3%;
 
     .summary-title {
       @include flex(initial, initial);

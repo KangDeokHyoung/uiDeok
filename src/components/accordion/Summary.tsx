@@ -22,8 +22,6 @@ export const SummryComp = (props: T_Accordion.Props) => {
     if (onClick) onClick(!check);
   };
 
-  console.log({ children });
-
   return (
     <div style={st} onClick={onClickHandler} className={classNames("accordion_summary", { [className]: className })}>
       <div className="summary-title">{children}</div>

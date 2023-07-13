@@ -13,7 +13,7 @@ export const AccordionContext = createContext<T_Accordion.Props>({
 });
 
 export const Accordion = (props: T_Accordion.Props) => {
-  const { st, transition = true, disabled = false, className = "", toggle = false, children, onChange } = props;
+  const { st, disabled = false, className = "", toggle = false, children, onChange } = props;
 
   const [expanded, setExpanded] = useState(false);
 
