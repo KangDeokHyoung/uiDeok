@@ -3,20 +3,43 @@
 .ui_accordion {
   width: 100%;
   height: auto;
-  background-color: white;
   border-radius: 8px;
+  background-color: white;
 
-  & > .collapse {
+  &.expanded {
+    & > .accordion_summary {
+      border-bottom: 1px solid #dddddd;
+    }
+  }
+
+  .collapse {
     padding: 3%;
-  }
+    height: auto;
+    transition: all 700ms $cubic-bezier;
 
-  & > .collapse-enter {
-    opacity: 0;
-  }
+    &.transition-coll-enter {
+      max-height: 0;
+    }
 
-  & > .collapse-enter-active {
-    opacity: 1;
-    transition: opacity 200ms;
+    &.transition-coll-enter-active {
+      max-height: 100vh;
+    }
+
+    &.transition-coll-enter-done {
+      max-height: 100vh;
+    }
+
+    &.transition-coll-exit {
+      max-height: 100vh;
+    }
+
+    &.transition-coll-exit-active {
+      max-height: 0;
+    }
+
+    &.transition-coll-exit-done {
+      max-height: 0;
+    }
   }
 
   .accordion_summary {

@@ -13,7 +13,11 @@ export const AccordionPage = () => {
             <div>Accordion.Summary</div>
           </Accordion.Summary>
           <Accordion.Collapse>
-            <div>AccordionCollapse</div>
+            <div>
+              AccordionCollapse AccordionCollapse AccordionCollapse AccordionCollapse AccordionCollapse
+              AccordionCollapse AccordionCollapse AccordionCollapse AccordionCollapse AccordionCollapse
+              AccordionCollapse AccordionCollapse
+            </div>
           </Accordion.Collapse>
         </Accordion>
       </ContentBox>
