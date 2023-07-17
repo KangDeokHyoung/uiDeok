@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
-import { CSSTransition } from "react-transition-group";
 import { useAccordion } from "./Accordion";
+import { CSSTransition } from "react-transition-group";
 
 interface Props {
   children: React.ReactNode | string;
