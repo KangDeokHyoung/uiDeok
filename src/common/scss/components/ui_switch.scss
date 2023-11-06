@@ -25,9 +25,10 @@
       left: 3px;
     }
     &.checked {
+      background-color: $primary-color;
       &::before {
         left: 22.5px;
-        background-color: $primary-color;
+        background-color: white;
       }
     }
   }

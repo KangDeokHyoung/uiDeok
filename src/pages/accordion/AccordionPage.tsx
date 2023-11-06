@@ -20,6 +20,18 @@ export const AccordionPage = () => {
             </div>
           </Accordion.Collapse>
         </Accordion>
+        <Accordion>
+          <Accordion.Summary>
+            <div>Accordion.Summary</div>
+          </Accordion.Summary>
+          <Accordion.Collapse>
+            <div>
+              AccordionCollapse AccordionCollapse AccordionCollapse AccordionCollapse AccordionCollapse
+              AccordionCollapse AccordionCollapse AccordionCollapse AccordionCollapse AccordionCollapse
+              AccordionCollapse AccordionCollapse
+            </div>
+          </Accordion.Collapse>
+        </Accordion>
       </ContentBox>
     </div>
   );

@@ -1,0 +1,34 @@
+@import "common/scss/utils.scss";
+
+.content-area {
+  max-height: 0;
+  height: auto;
+  overflow: hidden;
+  transition: max-height 500ms ease;
+  & > .container {
+    padding: 3%;
+  }
+
+  &.transition-portal-enter {
+    max-height: 0;
+  }
+
+  &.transition-portal-enter-active {
+    max-height: 100vh;
+  }
+
+  &.transition-portal-enter-done {
+    max-height: 100vh;
+  }
+
+  &.transition-portal-exit {
+    max-height: 100vh;
+  }
+
+  &.transition-portal-exit-active {
+    max-height: 0;
+  }
+  // &.transition-coll-exit-done {
+  //   max-height: 0;
+  // }
+}

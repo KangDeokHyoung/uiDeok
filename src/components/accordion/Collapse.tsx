@@ -13,14 +13,10 @@ export function Collapse(props: Props) {
   const acoRef = useRef(null);
 
   return (
-    <CSSTransition classNames="transition-coll" mountOnEnter unmountOnExit timeout={700} in={expanded}>
-      {expanded ? (
-        <div ref={acoRef} className="collapse">
-          {children}
-        </div>
-      ) : (
-        <></>
-      )}
+    <CSSTransition nodeRef={acoRef} classNames="transition-coll" unmountOnExit timeout={500} in={expanded}>
+      <div ref={acoRef} className="collapse">
+        <div className="container">{children}</div>
+      </div>
     </CSSTransition>
   );
 }

@@ -1,6 +1,8 @@
 import Portal from "components/portal/Portal";
-import React, { useState, createContext, Dispatch } from "react";
+import React, { useState, createContext, Dispatch, useRef } from "react";
 import { T_Dialog } from "type";
+import { CSSTransition } from "react-transition-group";
+import classNames from "classnames";
 
 type Context = {
   toggle: boolean;
@@ -9,9 +11,10 @@ type Context = {
 } | null;
 
 export function Dialog(props: T_Dialog.Props) {
-  const { children, disabled, content } = props;
+  const { children, disabled, content, className = "" } = props;
   const Context = createContext<Context>(null);
   const [toggle, setToggle] = useState(false);
+  const nodeRef = useRef(null);
 
   return (
     <>
@@ -22,7 +25,15 @@ export function Dialog(props: T_Dialog.Props) {
       >
         {children}
       </div>
-      {toggle && <Portal toggle={toggle} setToggle={setToggle} content={content} />}
+      {toggle && (
+        <Portal
+          nodeRef={nodeRef}
+          toggle={toggle}
+          className={classNames("portal", { [className]: className })}
+          setToggle={setToggle}
+          content={content}
+        />
+      )}
     </>
   );
 }
@@ -44,7 +55,7 @@ function Base(props: BaseProps) {
 
 function Content(props: ContentsProps) {
   const { id, children } = props;
-  return <div>{children}</div>;
+  return <div id={id}>{children}</div>;
 }
 
 Dialog.Base = Base;
