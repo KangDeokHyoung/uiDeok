@@ -1,18 +1,18 @@
-import Portal from "components/portal/Portal";
-import React, { useState, createContext, Dispatch, useRef } from "react";
+import Portal from "components/dialog/portal/Portal";
+import React, { useState, useRef } from "react";
 import { T_Dialog } from "type";
 import { CSSTransition } from "react-transition-group";
 import classNames from "classnames";
 
-type Context = {
-  toggle: boolean;
-  setToggle: Dispatch<boolean>;
-  children: (closeHandler: Dispatch<boolean>) => void;
-} | null;
+// type Context = {
+//   toggle: boolean;
+//   setToggle: Dispatch<boolean>;
+//   children: (closeHandler: Dispatch<boolean>) => void;
+// } | null;
 
 export function Dialog(props: T_Dialog.Props) {
   const { children, disabled, content, className = "" } = props;
-  const Context = createContext<Context>(null);
+  // const Context = createContext<Context>(null);
   const [toggle, setToggle] = useState(false);
   const nodeRef = useRef(null);
 
@@ -25,15 +25,15 @@ export function Dialog(props: T_Dialog.Props) {
       >
         {children}
       </div>
-      {toggle && (
+      <CSSTransition nodeRef={nodeRef} classNames="transition-dailog" unmountOnExit timeout={100} in={toggle}>
         <Portal
           nodeRef={nodeRef}
           toggle={toggle}
-          className={classNames("portal", { [className]: className })}
+          className={classNames({ [className]: className })}
           setToggle={setToggle}
           content={content}
         />
-      )}
+      </CSSTransition>
     </>
   );
 }

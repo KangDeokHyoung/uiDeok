@@ -7,3 +7,6 @@ export { Label } from "./label/Label";
 export { Radio } from "./radio/Radio";
 export { Switch } from "./switch/Switch";
 export { Accordion } from "./accordion/Accordion";
+export { Popover } from "./popover/Popover";
+export { TextArea } from "./textarea/TextArea";
+export { Table } from "./table/Table";

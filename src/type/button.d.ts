@@ -6,6 +6,7 @@ export declare namespace T_Button {
     type?: "button" | "submit";
     className?: string;
     disabled?: boolean;
+    ripple?: boolean;
   } & ButtonProps;
   type ButtonProps = React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>;
 }

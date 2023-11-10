@@ -14,6 +14,9 @@ const Navigator: React.FC<I_NavigatorProps> = (props) => {
       <NavLink to="/components/radio">Radio</NavLink>
       <NavLink to="/components/switch">Switch</NavLink>
       <NavLink to="/components/accordion">Accordion</NavLink>
+      <NavLink to="/components/popover">Popover</NavLink>
+      <NavLink to="/components/textarea">Textarea</NavLink>
+      <NavLink to="/components/table">Table</NavLink>
     </nav>
   );
 };

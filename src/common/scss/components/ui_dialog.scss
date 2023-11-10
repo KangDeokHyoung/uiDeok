@@ -7,6 +7,49 @@
   transform: translate(-50%, -50%);
   width: 100%;
   height: 100%;
+  overflow: hidden;
+  // transition: max-height 500ms ease;
+
+  &.transition-dailog-enter-done {
+    & > .content-box {
+      & > .content-area {
+        opacity: 1;
+        transform: scale(1);
+      }
+      & > .di_background {
+        background-color: rgba(0, 0, 0, 0.4);
+      }
+    }
+  }
+
+  &.transition-dailog-enter-active {
+    & > .content-box {
+      & > .content-area {
+        opacity: 0;
+        transform: scale(0.8);
+      }
+      & > .di_background {
+        background-color: rgba(0, 0, 0, 0.4);
+      }
+    }
+  }
+
+  &.transition-dailog-exit-active {
+    & > .content-box {
+      & > .content-area {
+        opacity: 0;
+        transform: scale(0.8);
+      }
+      & > .di_background {
+        background-color: rgba(0, 0, 0, 0);
+      }
+    }
+  }
+
+  & > .container {
+    padding: 3%;
+  }
+
   .content-box {
     position: relative;
     @include flex(center, center);
@@ -16,15 +59,20 @@
       min-width: 300px;
       border-radius: 8px;
       background-color: white;
+      max-height: 100%;
       padding: 20px;
       z-index: 2;
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
+      transition: opacity 150ms, transform 150ms;
+      opacity: 0;
+      transform: scale(0);
     }
     .di_background {
-      background-color: rgba(0, 0, 0, 0.4);
+      transition: background-color 150ms, transform 150ms;
+      background-color: rgba(0, 0, 0, 0);
       width: 100%;
       height: 100%;
       position: absolute;
@@ -33,20 +81,4 @@
       left: 0;
     }
   }
-}
-
-.aaa-enter {
-  /* 입장 애니메이션 스타일 */
-}
-
-.aaa-enter-active {
-  /* 입장 애니메이션 활성 스타일 */
-}
-
-.aaa-exit {
-  /* 퇴장 애니메이션 스타일 */
-}
-
-.aaa-exit-active {
-  /* 퇴장 애니메이션 활성 스타일 */
 }

@@ -25,6 +25,9 @@ export const Router: React.FC = () => {
             { path: "radio", element: <Ui.RadioPage /> },
             { path: "switch", element: <Ui.SwitchPage /> },
             { path: "accordion", element: <Ui.AccordionPage /> },
+            { path: "popover", element: <Ui.PopoverPage /> },
+            { path: "textarea", element: <Ui.TextAreaPage /> },
+            { path: "table", element: <Ui.TablePage /> },
           ],
         },
         {

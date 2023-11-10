@@ -1,0 +1,6 @@
+@import "common/scss/utils.scss";
+
+#popover {
+  width: fit-content;
+  @include flex(center, center);
+}

@@ -1,0 +1,14 @@
+@import "common/scss/utils.scss";
+
+.popover-radio-box {
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #eeeeee;
+  margin-bottom: 100px;
+  #ui_radio_group {
+    @include flex(initial, initial);
+    flex-direction: column;
+    height: 100px;
+    flex-wrap: wrap;
+  }
+}

@@ -1,0 +1,21 @@
+@import "common/scss/utils.scss";
+
+#text-area {
+  & > .content {
+    & > textarea {
+      border: 1px solid #eeeeee;
+      border-radius: 8px;
+      padding: 12px;
+      &::placeholder {
+        color: #979797;
+      }
+      resize: none;
+      &:focus {
+        border-color: #007acc;
+      }
+      &.error {
+        border-color: red;
+      }
+    }
+  }
+}
