@@ -1,5 +1,7 @@
 import React from "react";
 import "./ContentBox.scss";
+import { styled } from "styled-components";
+import classNames from "classnames";
 
 interface Props {
   children: JSX.Element | JSX.Element[];
