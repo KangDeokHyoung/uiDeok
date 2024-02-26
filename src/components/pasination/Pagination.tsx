@@ -1,6 +1,7 @@
-import { Button } from "components/button/Button";
 import React from "react";
 import { N_Pagination } from "type/pagination";
+import Controller from "./Controller";
+import Paging from "./Paging";
 
 const Pagination = (props: N_Pagination.Props) => {
   const {
@@ -13,25 +14,9 @@ const Pagination = (props: N_Pagination.Props) => {
 
   return (
     <div id="ui-pagination">
-      <div className="row">
-        <div className="left-arrow">
-          <Button>
-            <div>{`<<`}</div>
-          </Button>
-          <Button>
-            <div>{`<`}</div>
-          </Button>
-        </div>
-        <div className="center-arrow">1,2,3,4</div>
-        <div className="right-arrow">
-          <Button>
-            <div>{`>`}</div>
-          </Button>
-          <Button>
-            <div>{`>>`}</div>
-          </Button>
-        </div>
-      </div>
+      <Controller data={data} onChange={onChange}>
+        <Paging />
+      </Controller>
     </div>
   );
 };

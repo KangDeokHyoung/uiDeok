@@ -1,9 +1,10 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import classNames from "classnames";
-import React, { Dispatch, useRef, useEffect } from "react";
+import React, { useRef, useEffect } from "react";
 import { createPortal } from "react-dom";
-import "./Portal.scss";
 import { addPopHandler } from "./resource/Resource";
 import { debounce } from "lodash";
+import "./Portal.scss";
 
 interface Props {
   className?: string;
@@ -13,6 +14,7 @@ interface Props {
   gap: number;
   clickOutSide?: boolean;
   clickInSide?: boolean;
+  onChange?: (toggle: boolean) => void;
   element: Element;
   position:
     | "top left"
@@ -30,7 +32,7 @@ interface Props {
 }
 
 const Portal = (props: Props) => {
-  const { className = "", closeHandler, content, gap, clickInSide, clickOutSide, position, element } = props;
+  const { className = "", closeHandler, content, gap, clickInSide, clickOutSide, position, element, onChange } = props;
   const body = document.querySelector("body") as HTMLBodyElement;
   const nodeRef = useRef(null);
 
@@ -41,9 +43,14 @@ const Portal = (props: Props) => {
   useEffect(() => {
     const closeOutSideHandler = ((target: HTMLDivElement | null) => (e: MouseEvent) => {
       //contains 특정 dom안에 해당 target의 dom이 있는지 확인 boolean1
-      if (!target?.contains(e.target as Element) && !clickOutSide) return;
-      if (target?.contains(e.target as Element) && !clickInSide) return;
+      if (!target?.contains(e.target as Element) && !clickOutSide) {
+        return;
+      }
+      if (target?.contains(e.target as Element) && !clickInSide) {
+        return;
+      }
       closeHandler();
+      if (onChange) onChange(false);
     })(nodeRef.current);
     const delay = debounce(closeOutSideHandler, 100);
 

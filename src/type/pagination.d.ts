@@ -1,6 +1,6 @@
 export declare namespace N_Pagination {
   type Data = {
-    info: { current: number; total: number };
+    info: { current: number; totalPage: number };
     format: { limit: number; offset: number };
   };
 
@@ -9,5 +9,6 @@ export declare namespace N_Pagination {
     onChange?: (pagination: Data) => void;
     doubleArrowIcon?: JSX.Element;
     arrowIcon?: JSX.Element;
+    children?: JSX.Element;
   };
 }

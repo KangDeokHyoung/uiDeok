@@ -3,17 +3,22 @@
 #ui-table {
   width: 100%;
   border-radius: 8px;
-  border: 1px solid #eeeeee;
-  overflow: hidden;
+
   .table-head {
     @include flex(center, space-between);
     background-color: white;
-    border-bottom: 1px solid #eeeeee;
+    border: 1px solid #eeeeee;
+
+    #check-box {
+      padding: 0 10px;
+    }
+
     .th {
       flex: 1;
       padding: 12px;
       font-weight: 600;
       gap: 6px;
+      font-size: 14px;
       @include ellipsis();
       @include flex(center, initial);
       & > div {
@@ -42,11 +47,16 @@
       }
       .table-tr {
         @include flex(center, space-between);
+        width: 100%;
+        #check-box {
+          padding: 0 10px;
+        }
         .table-td {
           flex: 1;
           padding: 12px;
           text-align: center;
           @include ellipsis();
+          font-size: 14px;
 
           & > div {
             @include ellipsis();
@@ -64,16 +74,34 @@
   & > .row {
     gap: 20px;
     @include flex(center, space-between);
+    .ui_button {
+      background-color: transparent;
+      padding: 0;
+      &.disabled {
+        opacity: 0.2;
+      }
+    }
     .left-arrow {
       @include flex(center, initial);
-      gap: 10px;
     }
-    .center-arrow {
+    .center {
       cursor: pointer;
+      .paging-comp {
+        @include flex(center, center);
+        gap: 10px;
+        & > div {
+          padding: 5px 10px;
+        }
+        .active {
+          font-weight: bold;
+        }
+      }
     }
     .right-arrow {
       @include flex(center, initial);
-      gap: 10px;
+      .rotate {
+        transform: rotate(-180deg);
+      }
     }
   }
 }

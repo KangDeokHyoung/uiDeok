@@ -22,7 +22,7 @@ export const addPopHandler = ({
     | "right bottom";
 }) => {
   const uiButton = buttonNode as HTMLDivElement;
-  const d = uiButton.getBoundingClientRect();
+  const d = uiButton?.getBoundingClientRect();
   target.style.left = d.left + "px";
   target.style.top = d.height + d.top + gap + "px";
   const t = target.getBoundingClientRect();

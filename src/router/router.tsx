@@ -28,6 +28,8 @@ export const Router: React.FC = () => {
             { path: "popover", element: <Ui.PopoverPage /> },
             { path: "textarea", element: <Ui.TextAreaPage /> },
             { path: "table", element: <Ui.TablePage /> },
+            { path: "tooltip", element: <Ui.TooltipPage /> },
+            { path: "select", element: <Ui.SelectPage /> },
           ],
         },
         {

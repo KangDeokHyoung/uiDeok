@@ -25,5 +25,5 @@
     "strict": true // typechecking 요소를 활성화 함.
   },
   "compileOnSave": true,
-  "include": ["src"]
+  "include": ["src", "src/pages/table/table/BasicTable.tsx"]
 }

@@ -4,7 +4,7 @@ import { Box, FlexBox } from "common";
 import { Switch } from "components";
 
 export const SwitchPage = () => {
-  const [open, setOpen] = useState(0);
+  const [open, setOpen] = useState(false);
 
   return (
     <div id="switch-page">
@@ -15,7 +15,7 @@ export const SwitchPage = () => {
           <>{open ? "ON" : "OFF"}</>
         </Box>
         <FlexBox st={{ gap: 20 }}>
-          <Switch onChange={(item) => setOpen(item)} value={open} />
+          <Switch checked={open} onChange={(item) => setOpen(item.target.checked)} />
         </FlexBox>
       </ContentBox>
     </div>

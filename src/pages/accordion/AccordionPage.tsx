@@ -7,7 +7,7 @@ export const AccordionPage = () => {
     <div id="Accordion-page">
       <h4>Input</h4>
       <p>설명</p>
-      <ContentBox st={{ backgroundColor: "rgb(231, 235, 240)" }}>
+      <ContentBox st={{ backgroundColor: "rgb(231, 235, 240)", alignItems: "baseline" }}>
         <Accordion>
           <Accordion.Summary>
             <div>Accordion.Summary</div>

@@ -1,5 +1,6 @@
 import classNames from "classnames";
 import { Order } from "common/icons/Icons";
+import { CheckBox } from "components/checkbox/CheckBox";
 import { keys, values } from "lodash";
 import React, { Dispatch, createContext, useContext, useEffect, useState } from "react";
 import { N_Table } from "type/Table";
@@ -19,20 +20,21 @@ const align = (column: N_Table.Head.Data) => {
 };
 
 export function Table(props: N_Table.Props) {
-  const { children, className, id, order, st } = props;
+  const { children, className, id = "", order, st } = props;
   const [header, setHeader] = useState<N_Table.Header[]>([]);
 
   return (
     <TableContext.Provider value={{ header, setHeader, order }}>
-      <div id={classNames("ui-table", { id })} className={className} style={{ ...st }}>
+      <div id={classNames("ui-table", { [id]: id })} className={className} style={{ ...st }}>
         {children}
       </div>
     </TableContext.Provider>
   );
 }
 
-function Head(props: { data: N_Table.Header[] }) {
+function Head(props: N_Table.Head.Props) {
   const { setHeader, order } = useContext(TableContext);
+  const { checkbox } = props;
 
   useEffect(() => {
     setHeader(props.data);
@@ -53,11 +55,12 @@ function Head(props: { data: N_Table.Header[] }) {
 
   return (
     <div className="table-head">
+      {checkbox && <CheckBox {...checkbox} />}
       {props.data.map((el, i) => {
         return (
           <div
             className={classNames("th", { isOrder: el.order })}
-            key={el.property}
+            key={el.property + i}
             style={{ justifyContent: el.align }}
             onClick={() => {
               if (el.order) orderHandler(el.property);
@@ -91,12 +94,13 @@ function Row(props: N_Table.Row.Props) {
 }
 
 function Tr<T>(props: N_Table.Tr.Props<T>) {
-  const { children, data } = props;
+  const { children, data, checkbox } = props;
   const { header } = useContext(TableContext);
 
   return (
     <div className="table-tr">
       <>
+        {checkbox && <CheckBox {...checkbox} />}
         {header
           .filter((f) => !f.hidden)
           .map((el, i) => {

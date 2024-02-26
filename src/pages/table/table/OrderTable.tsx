@@ -3,7 +3,7 @@ import { Table } from "components";
 import { N_Table } from "type/Table";
 import { orderBy } from "lodash";
 
-export const SecondTable = () => {
+export const OrderTable = () => {
   const header = [
     { title: "ID", property: "id", align: "center", hidden: false, flex: 1.7, toolTip: true, order: true },
     { title: "url", property: "url", align: "center", hidden: false, flex: 1.7, toolTip: true, order: true },

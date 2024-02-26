@@ -8,6 +8,8 @@ import { AccordionPage } from "./accordion/AccordionPage";
 import { PopoverPage } from "./popver/PopoverPage";
 import { TextAreaPage } from "./textarea/TextAreaPage";
 import { TablePage } from "./table/TablePage";
+import { TooltipPage } from "./tooltip/TooltipPage";
+import { SelectPage } from "./select/SelectPage";
 
 export const Ui = {
   ButtonPage,
@@ -20,4 +22,6 @@ export const Ui = {
   PopoverPage,
   TextAreaPage,
   TablePage,
+  TooltipPage,
+  SelectPage,
 };

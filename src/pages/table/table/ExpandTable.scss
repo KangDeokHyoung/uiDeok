@@ -1,0 +1,22 @@
+@import "common/scss/utils.scss";
+
+.expand-table {
+  .table-body {
+    .table-body-row {
+      .ui_accordion {
+        .accordion_summary {
+          padding: 0;
+          .icon-arrow-box {
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            transform: translate(-50%, -50%);
+          }
+        }
+        .collapse {
+          text-align: left;
+        }
+      }
+    }
+  }
+}

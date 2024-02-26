@@ -1,0 +1,57 @@
+@import "common/scss/utils.scss";
+
+#select {
+  width: 200px;
+  height: 36px;
+  padding: 4px;
+
+  #popover {
+    width: 100%;
+    height: 100%;
+    .popover-area {
+      width: 100%;
+      height: 100%;
+      .select-summary {
+        width: calc(100% - 20px);
+        height: 100%;
+        padding: 0px 10px;
+        cursor: pointer;
+        border: 1px solid #eeeeee;
+        @include flex(center, space-between);
+        border-radius: 8px;
+
+        &.active {
+          border-color: $primary-color;
+        }
+
+        .select-summary-arrow {
+          transform: rotate(90deg);
+          cursor: pointer;
+          &.active {
+            transform: rotate(-90deg);
+          }
+        }
+      }
+    }
+  }
+}
+
+.popover-portal.select-popover {
+  padding: 0;
+  .content-box {
+    .select-option {
+      .select-item {
+        &.selected {
+          background-color: rgb(228, 238, 255);
+          color: $primary-color;
+          font-weight: 700;
+        }
+        padding: 10px;
+        cursor: pointer;
+        &:hover {
+          background-color: rgb(228, 238, 255);
+        }
+      }
+    }
+  }
+}

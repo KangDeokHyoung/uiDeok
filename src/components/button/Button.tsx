@@ -39,6 +39,8 @@ export const Button: React.FC<T_Button.Props> = (props) => {
     if (ripple && rippleRef.current) rippleHandler(e, rippleRef.current);
   };
 
+  const child = children && React.cloneElement((<>{children}</>) as React.ReactElement, { disabled });
+
   return (
     <button
       disabled={disabled}
@@ -50,7 +52,7 @@ export const Button: React.FC<T_Button.Props> = (props) => {
       {loading ? (
         <Loading />
       ) : (
-        <div className={classNames("text", { className: !!className })}>{children ? children : "Button"}</div>
+        <div className={classNames("text", { className: !!className })}>{children ? child : "Button"}</div>
       )}
       <div className="ripple" ref={rippleRef}></div>
     </button>

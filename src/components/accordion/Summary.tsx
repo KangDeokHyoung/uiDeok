@@ -26,8 +26,10 @@ export const SummryComp = (props: T_Accordion.Props) => {
     <div style={st} onClick={onClickHandler} className={classNames("accordion_summary", { [className]: className })}>
       <div className="summary-title">{children}</div>
       {/* <div className="icon-arrow">{expanded ? <IoIosArrowDown /> : <IoIosArrowUp />}</div> */}
-      <div className={classNames("icon-arrow", { expanded })}>
-        <IoIosArrowUp />
+      <div className="icon-arrow-box">
+        <div className={classNames("icon-arrow", { expanded })}>
+          <IoIosArrowUp />
+        </div>
       </div>
     </div>
   );

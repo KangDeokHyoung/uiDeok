@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import { Table } from "components";
+import { Accordion, Table } from "components";
 import { N_Table } from "type/Table";
 import { orderBy } from "lodash";
+import "./ExpandTable.scss";
 
-export const FirstTable = () => {
+export const ExpandTable = () => {
   const header = [
     { title: "ID", property: "id", align: "center", hidden: false, flex: 1.7, toolTip: true },
     { title: "url", property: "url", align: "center", hidden: false, flex: 1.7, toolTip: true },
@@ -18,28 +19,21 @@ export const FirstTable = () => {
     { id: "magenda4", url: "www.dagenda4.com", userName: "미덕형4", phoneNumber: "010-5856-0000" },
   ];
 
-  const [dataList, setDataList] = useState(data);
-  const [sort, setSort] = useState<N_Table.Sort>({ id: "asc" });
-
-  const sortHandler = (sort: N_Table.Sort) => {
-    const [key, value] = Object.entries(sort)[0];
-    setDataList(orderBy(dataList, key, value));
-    setSort(sort);
-  };
-
   return (
-    <Table order={{ sort, onChange: sortHandler }}>
+    <Table className="expand-table">
       <Table.Head data={header} />
-      <Table.Body data={dataList}>
+      <Table.Body data={data}>
         {({ index, rowData }) => {
           return (
             <Table.Row key={rowData.id}>
-              <Table.Tr data={rowData}>
-                {({ property, value }) => {
-                  if (property === "id") return value;
-                  return value ?? "-";
-                }}
-              </Table.Tr>
+              <Accordion>
+                <Accordion.Summary st={{ height: 36, padding: 0 }}>
+                  <Table.Tr data={rowData} st={{ height: 36 }} />
+                </Accordion.Summary>
+                <Accordion.Collapse>
+                  Accdodion expand-Accdodion expand-Accdodion expand-Accdodion expand
+                </Accordion.Collapse>
+              </Accordion>
             </Table.Row>
           );
         }}

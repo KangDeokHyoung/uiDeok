@@ -10,3 +10,5 @@ export { Accordion } from "./accordion/Accordion";
 export { Popover } from "./popover/Popover";
 export { TextArea } from "./textarea/TextArea";
 export { Table } from "./table/Table";
+export { Tooltip } from "./tooltip/Tooltip";
+export { Select } from "./select/Select";
