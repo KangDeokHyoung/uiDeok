@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/uiDeok/static/css/main.7896cbcf.css",
-    "main.js": "/uiDeok/static/js/main.a42e25de.js",
+    "main.js": "/uiDeok/static/js/main.9d2e8295.js",
     "index.html": "/uiDeok/index.html",
     "main.7896cbcf.css.map": "/uiDeok/static/css/main.7896cbcf.css.map",
-    "main.a42e25de.js.map": "/uiDeok/static/js/main.a42e25de.js.map"
+    "main.9d2e8295.js.map": "/uiDeok/static/js/main.9d2e8295.js.map"
   },
   "entrypoints": [
     "static/css/main.7896cbcf.css",
-    "static/js/main.a42e25de.js"
+    "static/js/main.9d2e8295.js"
   ]
 }
