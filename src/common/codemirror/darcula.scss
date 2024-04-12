@@ -1,0 +1,12 @@
+.cm-theme-dark {
+  .cm-scroller {
+    font-size: 0.8125rem;
+    font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+  }
+  .cm-editor {
+    background: rgb(0, 30, 60);
+  }
+  .cm-gutters {
+    display: none !important;
+  }
+}

@@ -1,8 +1,8 @@
+export default `
 import React, { useState } from "react";
 import { ContentBox } from "layout";
-import { CodeMirrorContext, FlexBox } from "common";
+import { FlexBox } from "common";
 import { CheckBox } from "components";
-import source from "./source";
 
 export const CheckBoxPage = () => {
   const [checked, setChecked] = useState(false);
@@ -26,7 +26,9 @@ export const CheckBoxPage = () => {
         </FlexBox>
         <div>{checked ? "on" : "off"}</div>
       </ContentBox>
-      <CodeMirrorContext source={source} title="CheckBox" />
     </div>
   );
 };
+
+
+`;

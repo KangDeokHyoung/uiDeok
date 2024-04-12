@@ -2,6 +2,8 @@ import React from "react";
 import { Button, Dialog } from "components";
 import { ContentBox } from "layout";
 import { T_Dialog } from "type";
+import { CodeMirrorContext } from "common";
+import source from "./source";
 
 export const DialogPage: React.FC<T_Dialog.Props> = (props) => {
   return (
@@ -24,6 +26,7 @@ export const DialogPage: React.FC<T_Dialog.Props> = (props) => {
           <Button>dialogg</Button>
         </Dialog>
       </ContentBox>
+      <CodeMirrorContext source={source} title="Dialog" />
     </div>
   );
 };

@@ -9,29 +9,29 @@ type CONTEXT<T> = {
   setToggle: Dispatch<boolean>;
   setSelected: Dispatch<MapSelected<T>>;
   selected: MapSelected<T>;
+  onChange?: (select: N_Select.Selected<T>) => void;
 };
 
 export const context = createContext<CONTEXT<any> | null>(null);
-
 export type MapSelected<T> = Map<string, { title: string; value: T; id?: string }>;
 
 export function Select<T>(
   props: N_Select.Props & {
-    onChange?: (select: MapSelected<T> | null) => void;
-    selected?: MapSelected<T> | null;
+    onChange?: (select: N_Select.Selected<T>) => void;
+    selected?: N_Select.Selected<T>;
   }
 ) {
-  const { children, gap = 8, selected: propsSelected, onChange: propsOnchange } = props;
+  const { children, gap = 8, onChange } = props;
   const [toggle, setToggle] = useState(false);
   const [selected, setSelected] = useState<MapSelected<T>>(new Map(null));
 
   useEffect(() => {
-    if (propsOnchange) propsOnchange(selected);
-  }, [propsOnchange, propsSelected, selected]);
+    if (props.selected) setSelected(new Map([[props.selected?.title ?? "", props.selected]]));
+  }, [props.selected]);
 
   return (
     <div id="select">
-      <context.Provider value={{ toggle, setToggle, setSelected, selected }}>
+      <context.Provider value={{ toggle, setToggle, setSelected, selected, onChange }}>
         <Popover
           gap={gap}
           className="select-popover"
@@ -52,9 +52,11 @@ function Summary(props: N_Select.Summay) {
   const { placeholder, children } = props;
   const value = children ? children : placeholder;
   const { toggle, selected } = useSelect();
+  const label = selected && selected.size ? [...selected.values()].map((el) => el.title) : value;
+
   return (
     <div className={classNames("select-summary", { active: toggle })}>
-      <div>{selected?.title ? selected?.title : value}</div>
+      <div>{label}</div>
       <Arrow className={classNames("select-summary-arrow", { active: toggle })} />
     </div>
   );
@@ -66,16 +68,17 @@ function Option(props: N_Select.Option) {
 }
 
 function Item(props: N_Select.Item) {
-  const { title, value = "" } = props;
-  const { setSelected, selected, setToggle } = useSelect();
+  const { title, value = "", id = title } = props;
+  const { setSelected: _setSelected, setToggle, onChange } = useSelect();
 
   const onClickHandler = () => {
-    if (setSelected) setSelected({ title, value, id: title });
+    if (onChange) onChange({ title, value, id });
+    if (_setSelected) _setSelected(new Map([[id, { title, value, id }]]));
     if (setToggle) setToggle(false);
   };
 
   return (
-    <div className={classNames("select-item", { selected: selected?.value === value })} onClick={onClickHandler}>
+    <div className={classNames("select-item")} onClick={onClickHandler}>
       {title}
     </div>
   );

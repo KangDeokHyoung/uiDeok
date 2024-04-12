@@ -1,14 +1,10 @@
+export default `
 import React, { useState } from "react";
 import { Table } from "components";
+import { N_Table } from "type/Table";
+import { orderBy } from "lodash";
 
-type Data = {
-  id: string;
-  url: string;
-  userName: string;
-  phoneNumber: string;
-};
-
-export const CheckBoxTable = () => {
+export const BasicTable = () => {
   const header = [
     { title: "ID", property: "id", align: "center", hidden: false, flex: 1.7, toolTip: true },
     { title: "url", property: "url", align: "center", hidden: false, flex: 1.7, toolTip: true },
@@ -23,37 +19,23 @@ export const CheckBoxTable = () => {
     { id: "magenda4", url: "www.dagenda4.com", userName: "미덕형4", phoneNumber: "010-5856-0000" },
   ];
 
-  const [selected, setSelected] = useState<Data[]>([]);
+  const [dataList, setDataList] = useState(data);
+  const [sort, setSort] = useState<N_Table.Sort>({ id: "asc" });
+
+  const sortHandler = (sort: N_Table.Sort) => {
+    const [key, value] = Object.entries(sort)[0];
+    setDataList(orderBy(dataList, key, value));
+    setSort(sort);
+  };
 
   return (
-    <Table>
-      <Table.Head
-        data={header}
-        checkbox={{
-          indeterminate: selected.length > 0 && selected.length < data.length,
-          onChange: (e: any) => {
-            const { checked } = e.target;
-            setSelected(checked ? data : []);
-          },
-        }}
-      />
-      <Table.Body data={data}>
+    <Table order={{ sort, onChange: sortHandler }}>
+      <Table.Head data={header} />
+      <Table.Body data={dataList}>
         {({ index, rowData }) => {
           return (
             <Table.Row key={rowData.id}>
-              <Table.Tr
-                data={rowData}
-                checkbox={{
-                  checked: !!selected.find((el) => el.id === rowData.id), // all check
-                  onChange: (e: any) => {
-                    const { checked } = e.target;
-                    if (checked) setSelected([...selected, rowData]);
-                    else {
-                      setSelected(selected.filter((el) => el.id !== rowData.id));
-                    }
-                  },
-                }}
-              >
+              <Table.Tr data={rowData}>
                 {({ property, value }) => {
                   if (property === "id") return value;
                   return value ?? "-";
@@ -66,3 +48,6 @@ export const CheckBoxTable = () => {
     </Table>
   );
 };
+
+
+`;

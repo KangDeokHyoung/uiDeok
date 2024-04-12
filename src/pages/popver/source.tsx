@@ -1,24 +1,11 @@
+export default `
 import React, { useState } from "react";
 import { Button, Dialog, Radio } from "components";
 import { ContentBox } from "layout";
 import { Popover } from "components";
-import { Box, CodeMirrorContext, FlexBox } from "common";
+import { Box, FlexBox } from "common";
 import "./PopoverPage.scss";
-import source from "./source";
 
-type Position =
-  | "top left"
-  | "top center"
-  | "top right"
-  | "bottom left"
-  | "bottom center"
-  | "bottom right"
-  | "left top"
-  | "left center"
-  | "left bottom"
-  | "right top"
-  | "right center"
-  | "right bottom";
 
 export const PopoverPage = () => {
   const [position, setPosition] = useState<Position>("bottom center");
@@ -84,7 +71,8 @@ export const PopoverPage = () => {
           </Box>
         </div>
       </ContentBox>
-      <CodeMirrorContext source={source} title="Popover" />
     </div>
   );
 };
+
+`;

@@ -1,14 +1,12 @@
+export default `
 import React from "react";
 import { Button } from "components";
-import { CodeMirrorContext, FlexBox } from "common";
+import { FlexBox } from "common";
 import { ContentBox } from "layout";
-import source from "./source";
 
 export const ButtonPage = () => {
   return (
     <div id="button-page">
-      <h4>Button</h4>
-      <p>설명</p>
       <ContentBox>
         <FlexBox st={{ gap: 20 }}>
           <Button loading />
@@ -17,7 +15,8 @@ export const ButtonPage = () => {
           <Button st={{ backgroundColor: "#e71818", width: 200 }} />
         </FlexBox>
       </ContentBox>
-      <CodeMirrorContext source={source} title="Button" />
     </div>
   );
 };
+
+`;

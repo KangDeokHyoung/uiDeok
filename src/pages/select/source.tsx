@@ -1,8 +1,7 @@
-import { CodeMirrorContext } from "common";
+export default `
 import { Select } from "components";
 import { ContentBox } from "layout";
 import React from "react";
-import source from "./source";
 
 export const SelectPage = () => {
   return (
@@ -18,7 +17,10 @@ export const SelectPage = () => {
           </Select.Option>
         </Select>
       </ContentBox>
-      <CodeMirrorContext source={source} title="Select" />
     </div>
   );
 };
+
+
+
+`;

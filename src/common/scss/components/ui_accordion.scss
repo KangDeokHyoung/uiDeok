@@ -3,7 +3,6 @@
 .ui_accordion {
   width: 100%;
   height: auto;
-  border-radius: 8px;
   background-color: white;
   & > .accordion_summary {
     .icon-arrow-box {
@@ -19,6 +18,8 @@
         transform: rotate(-180deg);
       }
     }
+  }
+  &.disabled {
   }
 
   .collapse {

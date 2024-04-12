@@ -7,6 +7,7 @@ export declare namespace N_Select {
     children: JSX.Element[];
     st?: React.CSSProperties;
     disabled?: boolean;
+    id?: string;
   };
   type Selected<T> = { title: string; value: T; id?: string } | null;
 
