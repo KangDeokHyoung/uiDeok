@@ -23,5 +23,6 @@ export declare namespace N_Select {
     title: string;
     value: unknown;
     id?: string;
+    disabled?: boolean;
   };
 }

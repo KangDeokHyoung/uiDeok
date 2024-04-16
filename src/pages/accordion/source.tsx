@@ -17,9 +17,9 @@ export const AccordionPage = () => {
             </div>
           </Accordion.Collapse>
         </Accordio
-        <Accordion>
+        <Accordion disabled>
           <Accordion.Summary>
-            <div>Accordion Actions</div>
+            <div>Accordion Disabled</div>
           </Accordion.Summary>
           <Accordion.Collapse>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit

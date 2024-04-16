@@ -9,10 +9,6 @@ export const CheckBox: React.FC<Props> = (props) => {
   const { checked, onChange } = props;
   const [check, setCheck] = useState(checked);
 
-  const checkHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (onChange) onChange(e);
-  };
-
   useEffect(() => {
     setCheck(checked);
   }, [checked]);

@@ -1,16 +1,14 @@
+export default `
 import { ContentBox } from "layout";
 import React, { useState } from "react";
 import { Label, TextArea } from "components";
-import { Box, CodeMirrorContext } from "common";
-import source from "./source";
+import { Box } from "common";
 
 export const TextAreaPage = () => {
   const [value, setValue] = useState("textarea");
 
   return (
     <div id="textarea-page">
-      <h4>TextArea</h4>
-      <p>설명</p>
       <ContentBox>
         <Box>
           <>
@@ -32,7 +30,11 @@ export const TextAreaPage = () => {
           </>
         </Box>
       </ContentBox>
-      <CodeMirrorContext source={source} title="Textarea" />
     </div>
   );
 };
+
+
+
+
+`;

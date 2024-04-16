@@ -6,7 +6,7 @@ import { T_Dialog } from "type";
 
 export const DialogPage: React.FC<T_Dialog.Props> = (props) => {
   return (
-    <div id="button-page">
+    <div id="dialog-page">
       <ContentBox>
         <Dialog
           content={({ closeHandler }) => (

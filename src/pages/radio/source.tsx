@@ -1,24 +1,34 @@
 export default `
-import React from "react";
+import React, { useState } from "react";
 import { ContentBox } from "layout";
-import { FlexBox } from "common";
+import { Box, FlexBox } from "common";
 import { Radio } from "components";
 
 export const RadioPage = () => {
+  const [value, setValue] = useState("female");
+
   return (
     <div id="radio-page">
       <ContentBox>
         <FlexBox st={{ gap: 20 }}>
-          <Radio.Group onChange={(item) => console.log(item)}>
-            <Radio title="female" value={1} />
-            <Radio title="male" value={2} />
-            <Radio title="other" value={3} />
+          <Radio.Group
+            value={value}
+            onChange={(item) => {
+              setValue(item as string);
+            }}
+          >
+            <Radio title="female" value="female" />
+            <Radio title="male" value="male" />
+            <Radio title="other" value="other" />
           </Radio.Group>
         </FlexBox>
+        <Box>
+          <>{value}</>
+        </Box>
       </ContentBox>
+      <CodeMirrorContext source={source} title="Radio" />
     </div>
   );
 };
-
 
 `;

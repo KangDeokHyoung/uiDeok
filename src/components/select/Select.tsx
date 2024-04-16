@@ -10,6 +10,7 @@ type CONTEXT<T> = {
   setSelected: Dispatch<MapSelected<T>>;
   selected: MapSelected<T>;
   onChange?: (select: N_Select.Selected<T>) => void;
+  disabled?: boolean;
 };
 
 export const context = createContext<CONTEXT<any> | null>(null);
@@ -31,9 +32,10 @@ export function Select<T>(
 
   return (
     <div id="select">
-      <context.Provider value={{ toggle, setToggle, setSelected, selected, onChange }}>
+      <context.Provider value={{ toggle, setToggle, setSelected, selected, onChange, disabled: props.disabled }}>
         <Popover
           gap={gap}
+          disabled={props.disabled}
           className="select-popover"
           open={toggle}
           onChange={setToggle}
@@ -51,11 +53,13 @@ export function Select<T>(
 function Summary(props: N_Select.Summay) {
   const { placeholder, children } = props;
   const value = children ? children : placeholder;
-  const { toggle, selected } = useSelect();
+  const { toggle, selected, disabled } = useSelect();
   const label = selected && selected.size ? [...selected.values()].map((el) => el.title) : value;
 
+  // console.log(props.disabled);
+
   return (
-    <div className={classNames("select-summary", { active: toggle })}>
+    <div className={classNames("select-summary", { active: toggle, disabled })}>
       <div>{label}</div>
       <Arrow className={classNames("select-summary-arrow", { active: toggle })} />
     </div>
@@ -68,17 +72,18 @@ function Option(props: N_Select.Option) {
 }
 
 function Item(props: N_Select.Item) {
-  const { title, value = "", id = title } = props;
+  const { title, value = "", id = title, disabled } = props;
   const { setSelected: _setSelected, setToggle, onChange } = useSelect();
 
   const onClickHandler = () => {
+    if (disabled) return;
     if (onChange) onChange({ title, value, id });
     if (_setSelected) _setSelected(new Map([[id, { title, value, id }]]));
     if (setToggle) setToggle(false);
   };
 
   return (
-    <div className={classNames("select-item")} onClick={onClickHandler}>
+    <div className={classNames("select-item", { disabled })} onClick={onClickHandler}>
       {title}
     </div>
   );

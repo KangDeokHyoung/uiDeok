@@ -7,7 +7,7 @@ import source from "./source";
 
 export const DialogPage: React.FC<T_Dialog.Props> = (props) => {
   return (
-    <div id="button-page">
+    <div id="dialog-page">
       <h4>Dialog</h4>
       <p>
         이 컴포넌트는 백그라운드 컴포넌트 앞에 자식 노드를 렌더링합니다. 모달은 중요한 기능을 제공합니다: 한 번에

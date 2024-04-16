@@ -11,8 +11,6 @@ export const PopoverPage = () => {
   const [position, setPosition] = useState<Position>("bottom center");
   return (
     <div id="popover-page">
-      <h4>Popover</h4>
-      <p>설명</p>
       <ContentBox>
         <div>
           <FlexBox st={{ gap: 30 }}>

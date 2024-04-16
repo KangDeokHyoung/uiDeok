@@ -11,7 +11,7 @@ interface Props {
 }
 
 export const TextArea = (props: Props) => {
-  const { onChange, className = "", placeholder, error = false, disabled } = props;
+  const { onChange, className = "", placeholder, error = false, disabled, value } = props;
   const onChangeHandler = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     if (onChange) onChange(e.target.value);
   };
@@ -24,6 +24,7 @@ export const TextArea = (props: Props) => {
           onChange={onChangeHandler}
           className={classNames({ [className]: className, error })}
           placeholder={placeholder}
+          value={value}
         />
       </div>
       <div className={classNames({ error })}>{error}</div>

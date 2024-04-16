@@ -45,6 +45,7 @@ export const Popover = (props: Props) => {
   const onChages = onChange ? onChange : setToggle;
 
   const onClickHandler = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (disabled) return;
     if (!disabled) setToggle(!toggle);
     onChages(!toggle);
   };

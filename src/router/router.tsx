@@ -3,6 +3,7 @@ import { useRoutes } from "react-router-dom";
 import { MainContentsLayout } from "layout";
 import { Ui } from "pages";
 import { Container } from "layout";
+import Main from "pages/Main";
 
 export const Router: React.FC = () => {
   return useRoutes([
@@ -34,7 +35,7 @@ export const Router: React.FC = () => {
         },
         {
           index: true,
-          element: <div>제 ui 설명 페이지입니다. redirect</div>,
+          element: <Main />,
         },
       ],
     },

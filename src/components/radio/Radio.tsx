@@ -28,17 +28,16 @@ export function Radio(props: Props) {
 
 type PropsGroup<T> = {
   children: JSX.Element[];
-  vlaue?: T;
+  value?: T;
   onChange?: (check: number | T) => void;
 };
 
-function RadioGroup<T>({ children, onChange, vlaue }: PropsGroup<T>) {
-  const [check, setCheck] = useState<number>(0);
-
-  const VALUE = vlaue ?? check;
+function RadioGroup<T>({ children, onChange, value }: PropsGroup<T>) {
+  const [check, setCheck] = useState<number | T>(value ?? 0);
 
   useEffect(() => {
-    if (onChange) onChange(VALUE);
+    if (onChange) onChange(check);
+    else setCheck(check);
   }, [check, onChange]);
 
   return (

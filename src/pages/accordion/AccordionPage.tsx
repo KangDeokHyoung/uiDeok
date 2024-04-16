@@ -2,7 +2,7 @@ import React from "react";
 import { Accordion, Button } from "components";
 import { ContentBox } from "layout";
 import { CodeMirrorContext, FlexBox } from "common";
-import source from "../button/source";
+import source from "./source";
 
 export const AccordionPage = () => {
   return (
@@ -40,7 +40,7 @@ export const AccordionPage = () => {
         </Accordion>
         <Accordion disabled>
           <Accordion.Summary>
-            <div>Accordion Actions</div>
+            <div>Accordion Disabled</div>
           </Accordion.Summary>
           <Accordion.Collapse>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse malesuada lacus ex, sit amet blandit
