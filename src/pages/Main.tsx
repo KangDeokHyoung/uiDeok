@@ -6,7 +6,7 @@ const Main = () => {
   useEffect(() => {
     navigate("/components/button");
   });
-  return <div></div>;
+  return <div />;
 };
 
 export default Main;
