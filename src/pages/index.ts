@@ -10,6 +10,7 @@ import { TextAreaPage } from "./textarea/TextAreaPage";
 import { TablePage } from "./table/TablePage";
 import { TooltipPage } from "./tooltip/TooltipPage";
 import { SelectPage } from "./select/SelectPage";
+import { ToastPage } from "./toast/ToastPage";
 
 export const Ui = {
   ButtonPage,
@@ -24,4 +25,5 @@ export const Ui = {
   TablePage,
   TooltipPage,
   SelectPage,
+  ToastPage,
 };

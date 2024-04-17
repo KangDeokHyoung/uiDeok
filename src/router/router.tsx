@@ -31,6 +31,7 @@ export const Router: React.FC = () => {
             { path: "table", element: <Ui.TablePage /> },
             { path: "tooltip", element: <Ui.TooltipPage /> },
             { path: "select", element: <Ui.SelectPage /> },
+            { path: "toast", element: <Ui.ToastPage /> },
           ],
         },
         {
