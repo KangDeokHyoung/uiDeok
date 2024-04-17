@@ -1,1 +1,96 @@
 @import "common/scss/utils.scss";
+
+@mixin status {
+  background-color: #e5f6fd;
+  color: #014361;
+
+  &.info {
+    background-color: #e5f6fd;
+    color: #014361;
+  }
+  &.success {
+    background-color: #edf7ed;
+    color: #1e4620;
+  }
+  &.warning {
+    background-color: #fff4e5;
+    color: #663c00;
+  }
+  &.error {
+    background-color: #fdeded;
+    color: #5f2120;
+  }
+}
+
+@mixin CSSTransitionEnter {
+  transition: opacity 300ms $cubic-bezier;
+  &.enter {
+    opacity: 0;
+  }
+
+  &.enter-active {
+    opacity: 1;
+  }
+}
+
+@mixin CSSTransitioExit {
+  &.exit-active {
+    opacity: 1;
+  }
+
+  &.exit {
+    opacity: 0;
+  }
+}
+
+.ui_toast_wrapper {
+  @include CSSTransitionEnter;
+  position: fixed;
+  width: fit-content;
+  height: fit-content;
+  z-index: 60;
+
+  &.bottom-center {
+    width: 300px;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .ui_toast_list {
+    .ui_toast_text {
+      @include status;
+      @include CSSTransitionEnter;
+      @include CSSTransitioExit;
+      @include flex(center, space-between);
+      font-style: normal;
+      white-space: nowrap;
+      border-radius: 4px;
+      font-size: 12px;
+      padding: 12px 14px;
+
+      &:not(:first-child) {
+        margin-top: 4px;
+      }
+
+      .ui_toast__close {
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+// .ubt__toast__wrapper.bottom-center .ubt__toast__list .ubt__toast__text {
+//   height: 60px;
+//   background-color: #7b1fa2 !important;
+// }
+
+// .ubt__toast__wrapper.bottom-center .ubt__toast__list .ubt__toast__text svg {
+//   color: #fff;
+// }
+
+// .ubt__toast__wrapper.bottom-center .ubt__toast__text span {
+//   font-size: 1.2rem;
+//   font-weight: 700;
+//   color: #fff;
+// }

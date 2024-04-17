@@ -3,18 +3,22 @@ import { Outlet } from "react-router-dom";
 import "./MainContentsLayout.scss";
 import { GrReactjs } from "react-icons/gr";
 import Navigator from "pages/navigator/Navigator";
+import Toast from "components/toast/Toast";
 
 export function MainContentsLayout() {
   return (
-    <div id="main">
-      <div className="side-menu">
-        <div className="logo">
-          <GrReactjs className="logo-icon" />
-          <h4>UI DEOK9</h4>
+    <Toast.Provider>
+      <div id="main">
+        <div className="side-menu">
+          <div className="logo">
+            <GrReactjs className="logo-icon" />
+            <h4>UI DEOK9</h4>
+          </div>
+          <Navigator />
         </div>
-        <Navigator />
+        <Outlet />
+        <Toast className="copy-toast" />
       </div>
-      <Outlet />
-    </div>
+    </Toast.Provider>
   );
 }

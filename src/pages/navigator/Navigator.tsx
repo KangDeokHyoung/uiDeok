@@ -18,7 +18,8 @@ const Navigator: React.FC<I_NavigatorProps> = (props) => {
       <NavLink to="/components/textarea">Textarea</NavLink>
       <NavLink to="/components/table">Table</NavLink>
       <NavLink to="/components/tooltip">Tooltip</NavLink>
-      <NavLink to="/components/Select">Select</NavLink>
+      <NavLink to="/components/select">Select</NavLink>
+      <NavLink to="/components/toast">Toast</NavLink>
     </nav>
   );
 };
