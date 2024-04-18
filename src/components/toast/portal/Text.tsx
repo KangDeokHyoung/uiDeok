@@ -32,8 +32,9 @@ function Text(props: N_Toast.Text.Props) {
       })}
     >
       <span>{text}</span>
-      <span onClick={removeHandler}>x</span>
-      {/* <Icons.Close className={cx(cn.concat("__close"))}  /> */}
+      <span className="ui_toast_close" onClick={removeHandler}>
+        x
+      </span>
     </div>
   );
 }

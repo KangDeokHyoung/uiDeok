@@ -37,15 +37,11 @@ interface Props {
 }
 
 const Portal = (props: N_Toast.Portal.Props) => {
-  const { className = "", position = "bottom center" } = props;
+  const { className = "" } = props;
   const body = document.querySelector("body") as HTMLBodyElement;
   const rootRef = useRef(null);
 
   const { alert } = useContext(Context);
-
-  console.log(1, alert);
-
-  console.log("rend");
 
   const list = (
     <div
