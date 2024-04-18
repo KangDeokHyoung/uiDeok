@@ -1,6 +1,6 @@
 import React from "react";
 import { CodeMirrorContext } from "common";
-import { Button, Tooltip } from "components";
+import { Button } from "components";
 import { ContentBox } from "layout";
 import source from "./source";
 import Toast from "components/toast/Toast";
@@ -19,7 +19,7 @@ export const ToastPage = () => {
       <ContentBox>
         <Button onClick={onClickHandler}>Toast</Button>
       </ContentBox>
-      {/* <CodeMirrorContext source={source} title="Tooltip" /> */}
+      <CodeMirrorContext source={source} title="Toast" />
     </div>
   );
 };
