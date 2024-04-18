@@ -15,7 +15,6 @@ export const ToastPage = () => {
   return (
     <div id="toast-page">
       <h4>Toast</h4>
-      <p>설명</p>
       <ContentBox>
         <Button onClick={onClickHandler}>Toast</Button>
       </ContentBox>

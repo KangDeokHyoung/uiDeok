@@ -10,7 +10,6 @@ export const SwitchPage = () => {
   return (
     <div id="switch-page">
       <h4>Switch</h4>
-      <p>설명</p>
       <ContentBox>
         <Box st={{ width: 100 }}>
           <>{open ? "ON" : "OFF"}</>

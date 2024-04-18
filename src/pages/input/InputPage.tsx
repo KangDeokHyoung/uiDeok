@@ -8,7 +8,6 @@ export const InputPage = () => {
   return (
     <div id="button-page">
       <h4>Input</h4>
-      <p>설명</p>
       <ContentBox>
         <div>
           <Box st={{ marginBottom: 30 }}>
