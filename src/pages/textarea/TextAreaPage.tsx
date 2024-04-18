@@ -10,7 +10,6 @@ export const TextAreaPage = () => {
   return (
     <div id="textarea-page">
       <h4>TextArea</h4>
-      <p>설명</p>
       <ContentBox>
         <Box>
           <>

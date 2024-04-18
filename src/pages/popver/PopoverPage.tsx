@@ -25,7 +25,6 @@ export const PopoverPage = () => {
   return (
     <div id="popover-page">
       <h4>Popover</h4>
-      <p>설명</p>
       <ContentBox>
         <div>
           <FlexBox st={{ gap: 30 }}>

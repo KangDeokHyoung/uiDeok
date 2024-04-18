@@ -12,22 +12,53 @@
   .side-menu {
     width: 250px;
     border-right: 1px solid #eeeeee;
-    .logo {
-      @include flex(center, center);
-      gap: 5px;
-      height: 70px;
-      h4 {
-        font-size: 20px;
-      }
-      .logo-icon {
-        animation: rotate_image 6s linear infinite;
-        transform-origin: 50% 50%;
-        font-size: 30px;
-        color: $primary-color;
-      }
+  }
+  .logo {
+    @include flex(center, center);
+    gap: 5px;
+    height: 70px;
+    h4 {
+      font-size: 20px;
+    }
+    .logo-icon {
+      animation: rotate_image 6s linear infinite;
+      transform-origin: 50% 50%;
+      font-size: 30px;
+      color: $primary-color;
     }
   }
   .container {
     flex: 1;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  /* 모바일 */
+
+  body {
+    #main {
+      .side-menu {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background-color: #fff;
+        z-index: 1;
+      }
+      #container {
+        width: 100%;
+      }
+      #container {
+        .primary {
+          justify-content: space-between;
+          padding-right: 20px;
+        }
+        .content {
+          h4 {
+            font-size: 20px;
+            font-weight: 700;
+          }
+        }
+      }
+    }
   }
 }

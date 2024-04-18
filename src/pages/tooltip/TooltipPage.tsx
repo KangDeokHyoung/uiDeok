@@ -8,7 +8,6 @@ export const TooltipPage = () => {
   return (
     <div id="tooltip-page">
       <h4>Tooltip</h4>
-      <p>설명</p>
       <ContentBox>
         <Tooltip content={() => <div>tooltip</div>}>
           <Button>tooltip</Button>

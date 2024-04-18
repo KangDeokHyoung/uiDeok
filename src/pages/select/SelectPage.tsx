@@ -11,7 +11,6 @@ export const SelectPage = () => {
   return (
     <div id="select-page">
       <h4>Select</h4>
-      <p>설명</p>
       <Box st={{ marginTop: 30 }}>
         <Label text="Single" />
         <ContentBox st={{ marginTop: 0, flexWrap: "wrap", justifyItems: "flex-start" }}>

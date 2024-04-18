@@ -10,7 +10,6 @@ export const TablePage = () => {
   return (
     <div id="table-page">
       <h4>Table</h4>
-      <p>설명</p>
       <ContentBox st={{ flexDirection: "column" }}>
         <Box st={{ flex: 1, width: "100%" }}>
           <Label st={{ marginBottom: 10 }} text="basic" />

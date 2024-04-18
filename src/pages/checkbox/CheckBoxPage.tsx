@@ -9,8 +9,7 @@ export const CheckBoxPage = () => {
 
   return (
     <div id="check-box-page">
-      <h4>Check box</h4>
-      <p>설명</p>
+      <h4>Checkbox</h4>
       <ContentBox>
         <FlexBox st={{ gap: 20 }}>
           <CheckBox
@@ -26,7 +25,7 @@ export const CheckBoxPage = () => {
         </FlexBox>
         <div>{checked ? "on" : "off"}</div>
       </ContentBox>
-      <CodeMirrorContext source={source} title="CheckBox" />
+      <CodeMirrorContext source={source} title="Checkbox" />
     </div>
   );
 };

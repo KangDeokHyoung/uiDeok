@@ -8,7 +8,6 @@ export const ButtonPage = () => {
   return (
     <div id="button-page">
       <h4>Button</h4>
-      <p>설명</p>
       <ContentBox>
         <FlexBox st={{ gap: 20 }}>
           <Button loading />
