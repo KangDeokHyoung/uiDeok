@@ -12,16 +12,16 @@ export const Container = () => {
   const title = location.pathname.split("/")[2];
 
   const dispatch = useDispatch();
-  const { viewType } = useSelector((state) => state.resize);
+  const { isMobile } = useSelector((state) => state.resize);
 
   const menuHandler = () => {
-    dispatch(reSizeActions.setViewType(true));
+    dispatch(reSizeActions.setMobileToggle(true));
   };
 
   return (
     <div id="container">
       <div className="primary">
-        {!viewType ? (
+        {isMobile ? (
           <>
             <div className="logo">
               <GrReactjs className="logo-icon" />
