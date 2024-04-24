@@ -11,7 +11,7 @@ import useWindowSizeCustom from "common/function/function";
 import "./MainContentsLayout.scss";
 
 export function MainContentsLayout() {
-  const { isMobile, mobileMenuToggle, resize } = useSelector((state) => state.resize);
+  const { isMobile } = useSelector((state) => state.resize);
   const size = useWindowSizeCustom().width;
   const dispatch = useDispatch();
 
