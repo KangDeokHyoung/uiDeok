@@ -1,2 +1,4 @@
 **UI DEOK**
-*Style Coponent 자체 제작*
+
+*Style Component 자체 제작*
+
