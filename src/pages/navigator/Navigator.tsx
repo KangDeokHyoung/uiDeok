@@ -22,7 +22,7 @@ const Navigator: React.FC<I_NavigatorProps> = (props) => {
     "Switch",
     "Accordion",
     "Popover",
-    " Textarea",
+    "Textarea",
     "Table",
     "Tooltip",
     "Select",

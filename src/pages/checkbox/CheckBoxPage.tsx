@@ -10,19 +10,17 @@ export const CheckBoxPage = () => {
   return (
     <div id="check-box-page">
       <h4>Checkbox</h4>
-      <ContentBox>
-        <FlexBox st={{ gap: 20 }}>
-          <CheckBox
-            label="CheckBox"
-            checked={checked}
-            onChange={(c) => {
-              const check = c.target.checked;
-              setChecked(check);
-            }}
-          />
-          <CheckBox label="CheckBox" />
-          <CheckBox label="CheckBox" />
-        </FlexBox>
+      <ContentBox st={{ gap: 20 }}>
+        <CheckBox
+          label="ON/OFF"
+          checked={checked}
+          onChange={(c) => {
+            const check = c.target.checked;
+            setChecked(check);
+          }}
+        />
+        <CheckBox label="CheckBox" />
+        <CheckBox label="CheckBox" />
         <div>{checked ? "on" : "off"}</div>
       </ContentBox>
       <CodeMirrorContext source={source} title="Checkbox" />
