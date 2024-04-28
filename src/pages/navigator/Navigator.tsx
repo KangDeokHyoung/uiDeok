@@ -1,25 +1,43 @@
 import * as React from "react";
 import { NavLink } from "react-router-dom";
+import { useDispatch, useSelector } from "common/hooks/selector";
+import { reSizeActions } from "store/actions/mypage";
 import "./Navigator.scss";
 
 interface I_NavigatorProps {}
 
 const Navigator: React.FC<I_NavigatorProps> = (props) => {
+  const dispatch = useDispatch();
+  const { isMobile } = useSelector((state) => state.resize);
+  const closeHandler = () => {
+    if (isMobile) dispatch(reSizeActions.setMobileToggle(false));
+  };
+
+  const naviList = [
+    "Button",
+    "Input",
+    "Dialog",
+    "Checkbox",
+    "Radio",
+    "Switch",
+    "Accordion",
+    "Popover",
+    " Textarea",
+    "Table",
+    "Tooltip",
+    "Select",
+    "Toast",
+  ];
+
   return (
     <nav>
-      <NavLink to="/components/button">Button</NavLink>
-      <NavLink to="/components/input">Input</NavLink>
-      <NavLink to="/components/dialog">Dialog</NavLink>
-      <NavLink to="/components/checkbox">Checkbox</NavLink>
-      <NavLink to="/components/radio">Radio</NavLink>
-      <NavLink to="/components/switch">Switch</NavLink>
-      <NavLink to="/components/accordion">Accordion</NavLink>
-      <NavLink to="/components/popover">Popover</NavLink>
-      <NavLink to="/components/textarea">Textarea</NavLink>
-      <NavLink to="/components/table">Table</NavLink>
-      <NavLink to="/components/tooltip">Tooltip</NavLink>
-      <NavLink to="/components/select">Select</NavLink>
-      <NavLink to="/components/toast">Toast</NavLink>
+      {naviList.map((item, i) => {
+        return (
+          <NavLink to={`/components/${item.toLowerCase()}`} onClick={closeHandler} key={i}>
+            {item}
+          </NavLink>
+        );
+      })}
     </nav>
   );
 };

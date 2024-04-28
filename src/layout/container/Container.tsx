@@ -4,8 +4,8 @@ import { GrReactjs } from "react-icons/gr";
 import { IoMdMenu } from "react-icons/io";
 import { Button } from "components";
 import { useDispatch, useSelector } from "common/hooks/selector";
-import "./Container.scss";
 import { reSizeActions } from "store/actions/mypage";
+import "./Container.scss";
 
 export const Container = () => {
   const location = useLocation();

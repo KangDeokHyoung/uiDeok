@@ -9,7 +9,7 @@ export const RadioPage = () => {
 
   return (
     <div id="radio-page">
-      <h4>Check box</h4>
+      <h4>Radio</h4>
       <ContentBox>
         <FlexBox st={{ gap: 20 }}>
           <Radio.Group
