@@ -8,7 +8,7 @@ import { reSizeActions } from "store/actions/mypage";
 
 export const M_Menu = () => {
   const dispatch = useDispatch();
-  const { isMobile, mobileMenuToggle } = useSelector((state) => state.resize);
+  const { mobileMenuToggle } = useSelector((state) => state.resize);
 
   const closeHandler = () => {
     dispatch(reSizeActions.setMobileToggle(false));
