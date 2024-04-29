@@ -14,7 +14,6 @@ export function MainContentsLayout() {
   const { isMobile } = useSelector((state) => state.resize);
   const size = useWindowSizeCustom().width;
   const dispatch = useDispatch();
-  console.log(isMobile);
 
   useEffect(() => {
     if (size) {
