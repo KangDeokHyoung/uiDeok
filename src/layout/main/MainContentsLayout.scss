@@ -23,6 +23,7 @@
     @include flex(center, center);
     gap: 5px;
     height: 70px;
+    cursor: pointer;
     h4 {
       font-size: 20px;
     }
